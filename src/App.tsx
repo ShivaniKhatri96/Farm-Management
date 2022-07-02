@@ -1,12 +1,11 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import './App.css';
-import Dashboard from './Pages/Dashboard';
-import Stables from './Pages/Stables';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Stables from "./pages/Stables";
 function App() {
   return (
     <div>
-       <Routes>
+      <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/stables" element={<Stables />} />
       </Routes>
