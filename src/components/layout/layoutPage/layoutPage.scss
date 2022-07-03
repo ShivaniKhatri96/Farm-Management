@@ -1,0 +1,12 @@
+@import "../../../styles/variables";
+
+.dropdown-client {
+  position: fixed;
+  top: 3.6rem;
+  right: 3rem;
+  width: 8rem;
+  height: 4rem;
+  background-color: #000000;
+  color: #ffffff;
+  z-index: 1000;
+}

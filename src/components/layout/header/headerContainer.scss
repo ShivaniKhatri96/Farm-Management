@@ -1,28 +1,34 @@
 @import "../../../styles/variables";
 
 .header-box {
+  position: fixed;
+  top: 0;
+  right:0;
+  left:0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 4.5rem;
+  height: 4.4rem;
   padding-left: 1rem;
   padding-right: 4rem;
   background-color: $white-color;
+  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
 }
 .client-name {
   color: $client-grey;
 }
 .circle {
-   color: $dark-red ;
-   font-size: 1.6rem;
-   &:hover {
+  color: $dark-red;
+  font-size: 1.8rem;
+  &:hover {
+    color: $hover-red;
     cursor: pointer;
-   }
+  }
 }
 .client-area {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
 }
