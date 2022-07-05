@@ -1,12 +1,32 @@
-@import "../../../styles/variables";
+@import "/src/styles/variables";
 
 .dropdown-client {
   position: fixed;
+  display: flex;
+  flex-direction: column;
   top: 3.6rem;
   right: 3rem;
-  width: 8rem;
-  height: 4rem;
-  background-color: #000000;
-  color: #ffffff;
+  width: 10rem;
+  height: 5.2rem;
+  padding: 0.4rem;
+  background-color: $white-color;
+  font-size: 1rem;
+  font-weight: 100rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   z-index: 1000;
+}
+
+.icon-gap {
+  padding-right: 0.6rem;
+}
+.dropdown-content {
+    padding: 0.4rem 1rem;
+    color: $black-color;
+    text-decoration: none;
+  &:hover {
+    background-color: $background-green;
+    border-radius: 0.3rem;
+    cursor: pointer;
+  }
 }

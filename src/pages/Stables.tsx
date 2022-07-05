@@ -1,8 +1,9 @@
 import React from 'react'
+import Layout from "../components/layout/layoutPage/Layout";
 
 const Stables = () => {
   return (
-    <div>Stables</div>
+    <Layout>bla bla stables</Layout>
   )
 }
 

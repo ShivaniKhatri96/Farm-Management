@@ -1,4 +1,4 @@
-@import "../../../styles/variables";
+@import "/src/styles/variables";
 
 .header-box {
   position: fixed;
@@ -31,4 +31,9 @@
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+}
+.logo {
+    &:hover {
+        cursor: pointer;
+    }
 }
