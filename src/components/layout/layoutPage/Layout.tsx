@@ -5,7 +5,8 @@ import "../layoutPage/layoutPage.scss";
 import { faGear, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../../app/hooks";
+import { useAppSelector, useAppDispatch } from "../../../app/hooks";
+import { toggleActive } from "../header/headerSlice";
 type Props = {
   children?: React.ReactNode;
 };
@@ -15,12 +16,21 @@ const headerMenu = [
 ];
 const Layout: FC<Props> = ({ children }) => {
   const active = useAppSelector((state) => state.header.active);
+  const dispatch = useAppDispatch();
+  const handleClient = () => {
+    dispatch(toggleActive());
+  };
   return (
     <div>
       {active && (
         <div className="dropdown-client">
           {headerMenu.map((menu) => (
-            <Link key={menu.name} className="dropdown-content" to={menu.route}>
+            <Link
+              key={menu.name}
+              className="dropdown-content"
+              to={menu.route}
+              onClick={handleClient}
+            >
               <FontAwesomeIcon icon={menu.icon} className="icon-gap" />
               {menu.name}
             </Link>

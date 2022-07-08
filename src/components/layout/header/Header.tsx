@@ -3,17 +3,23 @@ import "../header/headerContainer.scss";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { useAppDispatch } from "../../../app/hooks";
+import { useAppSelector, useAppDispatch } from "../../../app/hooks";
 import { toggleActive } from "./headerSlice";
 const Header = () => {
   const dispatch = useAppDispatch();
+  const active = useAppSelector((state) => state.header.active);
   // for dropdown with settings and logout with redux
   const handleClient = () => {
     dispatch(toggleActive());
   };
+  const handleToggleLogo = () => {
+    if (active === true) {
+      dispatch(toggleActive());
+    }
+  };
   return (
     <div className="header-box">
-      <Link className="logo" to={"/"}>
+      <Link className="logo" to={"/"} onClick={handleToggleLogo}>
         <img
           src={process.env.PUBLIC_URL + "assets/logo.png"}
           alt="Logo"
