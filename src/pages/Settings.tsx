@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Layout from "../components/layout/layoutPage/Layout";
 const Settings = () => {
   return (
-    <div>Settings</div>
+    <Layout>Settings</Layout>
   )
 }
 
