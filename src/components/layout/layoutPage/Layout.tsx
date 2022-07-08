@@ -5,24 +5,28 @@ import "../layoutPage/layoutPage.scss";
 import { faGear, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../../../app/hooks";
 type Props = {
   children?: React.ReactNode;
 };
 const headerMenu = [
-  { name: "Settings", route: "/setttings", icon: faGear },
+  { name: "Settings", route: "/settings", icon: faGear },
   { name: "Logout", route: "/welcome", icon: faRightFromBracket },
 ];
 const Layout: FC<Props> = ({ children }) => {
+  const active = useAppSelector((state) => state.header.active);
   return (
     <div>
-      <div className="dropdown-client">
-        {headerMenu.map((menu) => (
-          <Link key={menu.name} className="dropdown-content" to={menu.route}>
-            <FontAwesomeIcon icon={menu.icon} className="icon-gap" />
-            {menu.name}
-          </Link>
-        ))}
-      </div>
+      {active && (
+        <div className="dropdown-client">
+          {headerMenu.map((menu) => (
+            <Link key={menu.name} className="dropdown-content" to={menu.route}>
+              <FontAwesomeIcon icon={menu.icon} className="icon-gap" />
+              {menu.name}
+            </Link>
+          ))}
+        </div>
+      )}
       <div>
         <Header />
         {/* this will go inside layout body */}
