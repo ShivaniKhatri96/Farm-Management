@@ -19,6 +19,7 @@ const Layout: FC<Props> = ({ children }) => {
   const dispatch = useAppDispatch();
   const handleClient = () => {
     dispatch(toggleActive());
+    console.log("here I am client")
   };
   return (
     <div >

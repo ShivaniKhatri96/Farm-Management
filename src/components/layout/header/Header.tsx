@@ -18,6 +18,7 @@ const Header = () => {
   const clickOutside = (e: any) => {
     if (active === true && node.current && !node.current?.contains(e.target)) {
       dispatch(toggleActive());
+      console.log("here I am outside")
     }
   };
   useEffect(() => {
