@@ -4,9 +4,9 @@
 
 
 # Sneak peak
-> I will share one of the page design created using Figma
+> I will share one of the page design that I created using Figma
 >
-> In the future, I will post responsive layout images of the website itself
+> In the future, I will post images responsive layouts of the website itself
 
 ![farm world website](/public/assets/farmWebsite.jpg)
 
@@ -28,7 +28,7 @@
 - Sidebar
 
 ## Next
-- responsive layout for Header and sidebar
+- Responsive layout for Header and sidebar
 
 ## Links
 - Logo from [Adobe logo-maker](https://express.adobe.com/express-apps/logo-maker/)
