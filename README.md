@@ -12,7 +12,7 @@
 
 ## Tools
 - React
-- Typescript
+- TypeScript
 - Sass
 - Redux (for State management)
 - Font Awesome (for icons)
