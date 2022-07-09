@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# Farm World 
+**Welcome to the Farm World!**
+> Farm world is a website for Animal Farmers to keep track of their data related to their farm
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Sneak peak
+> I will share one of the page design that I created using Figma
+>
+> In the future, I will post images of the responsive layouts of the website itself
 
-In the project directory, you can run:
+![farm world website](/public/assets/farmWebsite.jpg)
 
-### `npm start`
+## Tools
+- React
+- Typescript
+- Sass
+- Redux (for State management)
+- Font Awesome (for icons)
+- Chart.js (will be included later for graphs)
+- React Testing Library (for testing with Jest)
+- Cypress (will be later used for End to End testing)
+- Figma (for designing the website)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Completed 
+- Header 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Currently working on
+- Sidebar
 
-### `npm test`
+## Next
+- Responsive layout for Header and sidebar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Links
+- Logo from [Adobe logo-maker](https://express.adobe.com/express-apps/logo-maker/)
 
-### `npm run build`
+## More About this Project
+This project has both frontend and backend. However, my main focus is frontend. This is the reason why backend code won't be added in the github. All the frontend code you will see in the github will be written by me. I will add the link to the website once the project is deployed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Thank you
+*I would like to thank my brother who is an experienced backend developer for setting up backend for this project. Your help has been greatly appreciated!*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

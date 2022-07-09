@@ -1,10 +1,19 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import type { PreloadedState } from "@reduxjs/toolkit";
 import headerReducer from "../components/layout/header/headerSlice";
-export const store = configureStore({
-  reducer: {
-    header: headerReducer,
-  },
-});
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+// Creating the root reducer separately so we can extract the RootState type
+const rootReducer = combineReducers({
+  header: headerReducer
+})
+
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
+  return configureStore({
+    reducer:rootReducer,
+      preloadedState
+  });
+}
+
+export type RootState = ReturnType<typeof rootReducer>;
+export type AppStore = ReturnType<typeof setupStore>;
+export type AppDispatch = AppStore['dispatch'];
