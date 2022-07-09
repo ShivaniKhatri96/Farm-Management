@@ -1,10 +1,13 @@
 # Farm World 
-- Welcome to the Farm World! Farm world is a website for Animal Farmers
+**Welcome to the Farm World!**
+> Farm world is a website for Animal Farmers to keep track of their data related to their farm
 
 
 # Sneak peak
-- I will share one of the page design created using Figma
-- Later, I will post responsive layout images of the website itself
+> I will share one of the page design created using Figma
+>
+> In the future, I will post responsive layout images of the website itself
+
 ![farm world website](/public/assets/farmWebsite.jpg)
 
 ## Tools
