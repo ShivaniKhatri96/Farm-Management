@@ -1,11 +1,20 @@
 import React, { useEffect } from "react";
 import "../header/headerContainer.scss";
-import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleUser,
+  faGear,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../../app/hooks";
 import { toggleActive } from "./headerSlice";
 import { useRef } from "react";
+
+const headerMenu = [
+  { name: "Settings", route: "/settings", icon: faGear },
+  { name: "Logout", route: "/welcome", icon: faRightFromBracket },
+];
 const Header = () => {
   const node = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
@@ -18,7 +27,6 @@ const Header = () => {
   const clickOutside = (e: any) => {
     if (active === true && node.current && !node.current?.contains(e.target)) {
       dispatch(toggleActive());
-      console.log("here I am outside")
     }
   };
   useEffect(() => {
@@ -43,8 +51,26 @@ const Header = () => {
       </Link>
       <div className="client-area">
         <div className="client-name">Shivani</div>
-        <div ref={node} onClick={handleClient}>
-          <FontAwesomeIcon icon={faCircleUser} className="circle" />
+        <div ref={node}>
+          <div onClick={handleClient}>
+            <FontAwesomeIcon icon={faCircleUser} className="circle" />
+          </div>
+          {/* dropdown items */}
+          {active && (
+            <div className="dropdown-client">
+              {headerMenu.map((menu) => (
+                <Link
+                  key={menu.name}
+                  className="dropdown-content"
+                  to={menu.route}
+                  onClick={handleClient}
+                >
+                  <FontAwesomeIcon icon={menu.icon} className="icon-gap" />
+                  {menu.name}
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
