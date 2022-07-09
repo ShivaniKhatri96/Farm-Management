@@ -6,7 +6,7 @@
 # Sneak peak
 > I will share one of the page design that I created using Figma
 >
-> In the future, I will post images responsive layouts of the website itself
+> In the future, I will post images of the responsive layouts of the website itself
 
 ![farm world website](/public/assets/farmWebsite.jpg)
 
