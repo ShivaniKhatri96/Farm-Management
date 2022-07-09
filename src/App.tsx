@@ -1,5 +1,6 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Header from "./components/layout/header/Header";
 import Dashboard from "./pages/Dashboard";
 import Settings from "./pages/Settings";
 import Stables from "./pages/Stables";

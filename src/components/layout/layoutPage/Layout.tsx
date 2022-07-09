@@ -21,7 +21,7 @@ const Layout: FC<Props> = ({ children }) => {
     dispatch(toggleActive());
   };
   return (
-    <div>
+    <div >
       {active && (
         <div className="dropdown-client">
           {headerMenu.map((menu) => (
