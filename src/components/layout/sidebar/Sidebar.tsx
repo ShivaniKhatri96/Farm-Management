@@ -2,6 +2,14 @@ import React from "react";
 import "../sidebar/sidebarContainer.scss";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+
+const navMenu = [
+  { name: "Overview", route: "/" },
+  { name: "Stable Management", route: "/stables" },
+  { name: "Group Management", route: "/groups" },
+  { name: "Data", route: "/data" },
+];
 const Sidebar = () => {
   return (
     <div className="container">
@@ -15,10 +23,13 @@ const Sidebar = () => {
         <FontAwesomeIcon icon={faMagnifyingGlass} className="searchbar-icon" />
       </div>
 
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
+      <div>
+        {navMenu.map((menu) => (
+          <div key={menu.name}>
+            <Link to={menu.route}>{menu.name}</Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
