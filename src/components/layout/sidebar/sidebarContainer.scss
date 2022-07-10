@@ -1,0 +1,12 @@
+@import "/src/styles/variables";
+
+.container {
+  position: sticky;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  padding: 6rem 2.5rem 3rem 2.5rem;
+  background-color: $sidebar-green;
+  color: $sidebar-fontcolor;
+}
+
