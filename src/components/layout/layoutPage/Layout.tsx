@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Header from "../header/Header";
-import Sidebar from "../Sidebar";
+import Sidebar from "../sidebar/Sidebar";
 import "../layoutPage/layoutPage.scss";
 
 type Props = {
@@ -11,10 +11,10 @@ const Layout: FC<Props> = ({ children }) => {
   return (
     <div>
       <Header />
-      {/* this will go inside layout body */}
-      <Sidebar />
-      {/* grid content is where this will go */}
-      <div>{children}</div>
+      <div className="layoutBody">
+        <Sidebar />
+        <div className="content">{children}</div>
+      </div>
     </div>
   );
 };

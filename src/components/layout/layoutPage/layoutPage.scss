@@ -1,2 +1,10 @@
 @import "/src/styles/variables";
 
+.layoutBody {
+    display: grid;
+    grid-template-columns: 18% 1fr;
+}
+.content {
+    position: relative;
+     margin: 7rem 4rem 4rem 6rem;
+}
