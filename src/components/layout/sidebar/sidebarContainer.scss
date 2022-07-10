@@ -2,16 +2,22 @@
 
 .container {
   position: sticky;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
   left: 0;
   top: 0;
   height: 100vh;
-  padding: 6rem 2.5rem 3rem 2rem;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  //   padding: 6rem 2rem 3rem 1.5rem;
   background-color: $sidebar-green;
   color: $sidebar-fontcolor;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .searchbar-container {
   position: relative;
+  padding: 0 1.8rem 0 1.8rem;
 }
 .searchbar-styles {
   position: relative;
@@ -19,13 +25,45 @@
   height: 2.5rem;
   padding-left: 1rem;
   padding-right: 2.5rem;
-  color: $searchbar-green;
+  color: $sidebar-fontcolor;
   border: none;
   border-radius: 0.8rem;
 }
 .searchbar-icon {
   position: absolute;
-  right: 1rem;
+  right: 2.8rem;
   bottom: 0.85rem;
-  color: $searchbar-green;
+  color: $sidebar-fontcolor;
+}
+
+.menu {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.single-menu {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 1rem;
+  border-bottom: solid $grey-bordercolor;
+  border-width: 0.12rem;
+  &:hover {
+    background-color: $background-green;
+    border-radius: 0.4rem;
+    cursor: pointer;
+  }
+}
+.menu-data {
+  @extend .single-menu;
+  border: none;
+}
+.link-style {
+  text-decoration: none;
+  color: $sidebar-fontcolor;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.grey-border {
+  border-color: red;
+  border-bottom: 1rem;
 }

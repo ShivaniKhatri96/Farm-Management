@@ -2,7 +2,7 @@ import React from "react";
 import "../sidebar/sidebarContainer.scss";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navMenu = [
   { name: "Overview", route: "/" },
@@ -11,6 +11,7 @@ const navMenu = [
   { name: "Data", route: "/data" },
 ];
 const Sidebar = () => {
+  const location = useLocation();
   return (
     <div className="container">
       {/* searchbar */}
@@ -22,11 +23,20 @@ const Sidebar = () => {
         />
         <FontAwesomeIcon icon={faMagnifyingGlass} className="searchbar-icon" />
       </div>
-
-      <div>
+      {/* menu */}
+      <div className="menu">
         {navMenu.map((menu) => (
           <div key={menu.name}>
-            <Link to={menu.route}>{menu.name}</Link>
+            <div className={menu.name === "Data" ? "menu-data" : "single-menu"}>
+              <Link to={menu.route} className="link-style">
+                {menu.name}
+              </Link>
+            </div>
+            {/* this temporary div will be later replaced by another div */}
+            {menu.name === "Overview" && location.pathname === "/" && (
+              <div> I am overview </div>
+            )}
+            {/* <div className="grey-border"/> */}
           </div>
         ))}
       </div>

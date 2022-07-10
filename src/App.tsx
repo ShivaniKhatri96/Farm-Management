@@ -7,6 +7,7 @@ import Groups from "./pages/Groups";
 import Settings from "./pages/Settings";
 import Stables from "./pages/Stables";
 import Welcome from "./pages/Welcome";
+
 function App() {
   return (
     <div>
