@@ -27,16 +27,18 @@ const Sidebar = () => {
       <div className="menu">
         {navMenu.map((menu) => (
           <div key={menu.name}>
-            <div className={menu.name === "Data" ? "menu-data" : "single-menu"}>
-              <Link to={menu.route} className="link-style">
+            <Link to={menu.route} className="link-style">
+              <div
+                className={menu.name === "Data" ? "menu-data" : "single-menu"}
+              >
                 {menu.name}
-              </Link>
-            </div>
+              </div>
+            </Link>
+
             {/* this temporary div will be later replaced by another div */}
-            {menu.name === "Overview" && location.pathname === "/" && (
+            {/* {menu.name === "Overview" && location.pathname === "/" && (
               <div> I am overview </div>
-            )}
-            {/* <div className="grey-border"/> */}
+            )} */}
           </div>
         ))}
       </div>

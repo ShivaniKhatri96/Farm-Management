@@ -40,30 +40,26 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
-
+.link-style {
+  text-decoration: none;
+}
 .single-menu {
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
   padding-left: 1rem;
   border-bottom: solid $grey-bordercolor;
   border-width: 0.12rem;
+  color: $sidebar-fontcolor;
+  font-size: 1.2rem;
+  font-weight: 500;
   &:hover {
-    background-color: $background-green;
-    border-radius: 0.4rem;
+    background-color: $hover-green;
+    color: $black-color;
+    border-radius: 0.2rem;
     cursor: pointer;
   }
 }
 .menu-data {
   @extend .single-menu;
   border: none;
-}
-.link-style {
-  text-decoration: none;
-  color: $sidebar-fontcolor;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-.grey-border {
-  border-color: red;
-  border-bottom: 1rem;
 }
