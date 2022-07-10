@@ -23,12 +23,13 @@
 
 ## Completed 
 - Header 
-
-## Currently working on
 - Sidebar
 
-## Next
+## Currently working on
 - Responsive layout for Header and sidebar
+
+## Next
+- layout for overview 
 
 ## Links
 - Logo from [Adobe logo-maker](https://express.adobe.com/express-apps/logo-maker/)
