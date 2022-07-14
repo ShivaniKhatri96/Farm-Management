@@ -1,19 +1,33 @@
 @import "/src/styles/variables";
-
+@import "/src/styles/mixins";
 .container {
-  position: sticky;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  padding-top: 6rem;
+  position: fixed;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(100vh - 3.8rem);
+  padding-top: 2.4rem;
   padding-bottom: 3rem;
-  //   padding: 6rem 2rem 3rem 1.5rem;
   background-color: $sidebar-green;
   color: $sidebar-fontcolor;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  z-index: 1;
+  // transform: ;
+  @include min-lg {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    z-index: 0;
+    //   padding: 6rem 2rem 3rem 1.5rem;
+   
+  }
 }
 .searchbar-container {
   position: relative;

@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../../app/hooks";
-import { toggleActive } from "./headerSlice";
+import { toggleActive, toggleHamburger } from "./headerSlice";
 import { useRef } from "react";
 
 const headerMenu = [
@@ -19,6 +19,12 @@ const Header = () => {
   const node = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const active = useAppSelector((state) => state.header.active);
+  const hamburgerOn = useAppSelector(state => state.header.hamburgerOn);
+  
+  const handleHamburger = () => {
+    dispatch(toggleHamburger());
+  }
+  console.log(hamburgerOn);
   // for dropdown with settings and logout with redux
   const handleClient = () => {
     dispatch(toggleActive());
@@ -43,12 +49,16 @@ const Header = () => {
     <div className="header-box">
       <Link className="logo" to={"/"}>
         <img
-          src={process.env.PUBLIC_URL + "assets/logo.png"}
+          src={process.env.PUBLIC_URL + "assets/newLogo.png"}
           alt="Logo"
-          height="85px"
-          width="250px"
+          height="45px"
+          width="160px"
         />
       </Link>
+      {/* below large screens */}
+      <div className={hamburgerOn ? "hamburgerOn" : "hamburger"} onClick={handleHamburger}/>
+       
+      {/* this will be shown only from large screens */}
       <div className="client-area">
         <div className="client-name">Shivani</div>
         <div ref={node}>
