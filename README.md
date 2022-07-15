@@ -8,14 +8,6 @@
 
 ![farm world website](/public/assets/farmWebsite.jpg)
 
-# Responsive layout
-- for desktop version: the layout is same as in the design
-- for tablet version: after hamburger menu is clicked
-- for mobile version: before and after hamburger menu is clicked
-![tablet version](/public/assets/sidebarTablet.jpg)
-![mobile version](/public/assets/sidebarMobileOff.jpg) ![mobile version](/public/assets/sidebarMobile.jpg)
-
-
 ## Tools
 - React
 - TypeScript
@@ -31,6 +23,13 @@
 - Header 
 - Sidebar
 - Responsive layout for Header and sidebar
+
+# Responsive layout
+- for desktop version: the layout is same as in the design
+- for tablet version: after hamburger menu is clicked
+- for mobile version: before and after hamburger menu is clicked
+![tablet version](/public/assets/sidebarTablet.jpg)
+![mobile version](/public/assets/sidebarMobileOff.jpg) ![mobile version](/public/assets/sidebarMobile.jpg)
 
 ## Currently working on
 - layout for overview (when user logged in for the first time)
