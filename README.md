@@ -25,9 +25,12 @@
 - Responsive layout for Header and sidebar
 
 # Responsive layout
-- for desktop version: the layout is same as in the design
-- for tablet version: after hamburger menu is clicked
-- for mobile version: before and after hamburger menu is clicked
+- Desktop version
+> The layout is same as in the design
+- Tablet version
+> After hamburger menu is clicked
+- Mobile version
+> Before and after hamburger menu is clicked
 ![tablet version](/public/assets/sidebarTablet.jpg)
 ![mobile version](/public/assets/sidebarMobileOff.jpg) ![mobile version](/public/assets/sidebarMobile.jpg)
 
