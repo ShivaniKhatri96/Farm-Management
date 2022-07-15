@@ -5,10 +5,17 @@
 
 # Sneak peak
 > I will share one of the page design that I created using Figma
->
-> In the future, I will post images of the responsive layouts of the website itself
 
 ![farm world website](/public/assets/farmWebsite.jpg)
+
+# Responsive layout
+- for desktop version: the layout is same as in the design
+- for tablet version: after hamburger menu is clicked
+![tablet version](/public/assets/sidebarTablet.jpg)
+- for mobile version: before and after hamburger menu is clicked
+![mobile version](/public/assets/sidebarMobileOff.jpg)
+![mobile version](/public/assets/sidebarMobile.jpg)
+
 
 ## Tools
 - React
@@ -24,12 +31,13 @@
 ## Completed 
 - Header 
 - Sidebar
-
-## Currently working on
 - Responsive layout for Header and sidebar
 
+## Currently working on
+- layout for overview (when user logged in for the first time)
+
 ## Next
-- layout for overview 
+-  Welcome page layout
 
 ## Links
 - Logo from [Adobe logo-maker](https://express.adobe.com/express-apps/logo-maker/)
