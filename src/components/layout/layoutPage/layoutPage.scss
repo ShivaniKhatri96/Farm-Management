@@ -1,10 +1,15 @@
 @import "/src/styles/variables";
+@import "/src/styles/mixins";
 
 .layoutBody {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  @include min-xl {
     display: grid;
     grid-template-columns: 18% 1fr;
+  }
 }
 .content {
-    position: relative;
-     margin: 7rem 4rem 4rem 6rem;
+  position: relative;
+  margin: 7rem 4rem 4rem 6rem;
 }
