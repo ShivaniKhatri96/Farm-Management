@@ -1,19 +1,49 @@
 @import "/src/styles/variables";
-
+@import "/src/styles/mixins";
 .container {
-  position: sticky;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  padding-top: 6rem;
+  position: fixed;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  height: calc(100vh - 3.8rem);
+  padding-top: 2.4rem;
   padding-bottom: 3rem;
-  //   padding: 6rem 2rem 3rem 1.5rem;
   background-color: $sidebar-green;
   color: $sidebar-fontcolor;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  z-index: 1;
+  transform: translate(100%);
+  transition: transform ease-in-out 0.8s;
+  @include min-sm {
+    width: 38%;
+  }
+  @include min-md {
+    height: calc(100vh - 4.4rem);
+    width: 30%;
+  }
+  @include min-lg {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    z-index: 0;
+    transform: none;
+    transition-property: none;
+  }
+}
+.containerOn {
+  @extend .container;
+//for below lg screens 
+  @include max-lg {
+    transform: translateX(0);
+  }
 }
 .searchbar-container {
   position: relative;
@@ -39,6 +69,13 @@
 .menu {
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-top: 0.5rem;
+  @include min-sm {
+    padding-top: 1rem;
+  }
+  @include min-lg {
+    padding-top: 0rem;
+  }
 }
 .link-style {
   text-decoration: none;

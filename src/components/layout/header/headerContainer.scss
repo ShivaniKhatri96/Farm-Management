@@ -1,5 +1,5 @@
 @import "/src/styles/variables";
-
+@import "/src/styles/mixins";
 .header-box {
   position: fixed;
   top: 0;
@@ -8,13 +8,24 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 4.4rem;
+  height: 3.8rem;
   width: 100%;
-  padding-left: 1rem;
-  padding-right: 4rem;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
   background-color: $white-color;
   z-index: 1;
   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+  @include min-md {
+    height: 4.4rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+  @include min-lg {
+    padding-left: 3.4rem;
+    padding-right: 4rem;
+    // padding-left: 1rem;
+    // padding-right: 4rem;
+  }
 }
 .client-name {
   color: $client-grey;
@@ -28,10 +39,13 @@
   }
 }
 .client-area {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
+  display: none;
+  @include min-lg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 .logo {
   &:hover {
@@ -39,20 +53,23 @@
   }
 }
 .dropdown-client {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  top: 3.6rem;
-  right: 3rem;
-  width: 10rem;
-  height: 5.2rem;
-  padding: 0.4rem;
-  background-color: $white-color;
-  font-size: 1rem;
-  font-weight: 100rem;
-  border-radius: 0.5rem;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-  z-index: 1000;
+  display: none;
+  @include min-lg {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 3.6rem;
+    right: 3rem;
+    width: 10rem;
+    height: 5.2rem;
+    padding: 0.4rem;
+    background-color: $white-color;
+    font-size: 1rem;
+    font-weight: 100rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    z-index: 1000;
+  }
 }
 
 .icon-gap {
@@ -66,5 +83,50 @@
     background-color: $background-green;
     border-radius: 0.3rem;
     cursor: pointer;
+  }
+}
+
+.hamburger {
+  position: relative;
+  display: inline-block;
+  width: 2.2rem;
+  height: 0.2rem;
+  background-color: $line-grey;
+  transition: transform 0.4s ease-in-out;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 2.2rem;
+    height: 0.2rem;
+    background-color: $line-grey;
+    transition: transform 0.4s ease-in-out;
+  }
+  &::before {
+    top: -0.6rem;
+    transform: rotate(0);
+  }
+  &::after {
+    top: 0.6rem;
+    transform: rotate(0);
+  }
+  @include min-md {
+    margin-bottom: 0.5rem;
+  }
+  @include min-lg {
+    display: none;
+  }
+}
+.hamburgerOn {
+  @extend .hamburger;
+  background-color: $white-color;
+  &::before {
+    top: 0rem;
+    transform: rotate(130deg);
+  }
+  &::after {
+    top: 0rem;
+    transform: rotate(-130deg);
   }
 }

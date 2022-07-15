@@ -3,6 +3,7 @@ import "../sidebar/sidebarContainer.scss";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useLocation } from "react-router-dom";
+import { useAppSelector } from "../../../app/hooks";
 
 const navMenu = [
   { name: "Overview", route: "/" },
@@ -12,8 +13,9 @@ const navMenu = [
 ];
 const Sidebar = () => {
   const location = useLocation();
+  const hamburgerOn = useAppSelector(state => state.header.hamburgerOn);
   return (
-    <div className="container">
+    <div className={hamburgerOn ? "containerOn" : "container"}>
       {/* searchbar */}
       <div className="searchbar-container">
         <input
