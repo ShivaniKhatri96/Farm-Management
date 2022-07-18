@@ -33,7 +33,7 @@
 - Mobile version
 > Before and after hamburger menu is clicked
 ![tablet version](/public/assets/sidebarTablet.jpg)
-![mobile version](/public/assets/sidebarMobileOff.jpg) ![mobile version](/public/assets/sidebarMobile.jpg)
+![mobile version](/public/assets/sidebarMobile.jpg) ![mobile version](/public/assets/sidebarMobileOff.jpg)
 
 ## Currently working on
 - Welcome page layout
