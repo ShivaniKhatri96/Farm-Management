@@ -42,6 +42,7 @@
 
 ## Links
 - Logo from [Adobe logo-maker](https://express.adobe.com/express-apps/logo-maker/)
+- Pictures from [pexels.com](https://www.pexels.com/)
 
 ## More About this Project
 This project has both frontend and backend. However, my main focus is frontend. This is the reason why backend code won't be added in the github. All the frontend code you will see in the github will be written by me. I will add the link to the website once the project is deployed.

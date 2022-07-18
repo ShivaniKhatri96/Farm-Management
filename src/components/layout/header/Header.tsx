@@ -19,11 +19,11 @@ const Header = () => {
   const node = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const active = useAppSelector((state) => state.header.active);
-  const hamburgerOn = useAppSelector(state => state.header.hamburgerOn);
-  
+  const hamburgerOn = useAppSelector((state) => state.header.hamburgerOn);
+
   const handleHamburger = () => {
     dispatch(toggleHamburger());
-  }
+  };
   console.log(hamburgerOn);
   // for dropdown with settings and logout with redux
   const handleClient = () => {
@@ -56,8 +56,11 @@ const Header = () => {
         />
       </Link>
       {/* below large screens */}
-      <div className={hamburgerOn ? "hamburgerOn" : "hamburger"} onClick={handleHamburger}/>
-       
+      <div
+        className={hamburgerOn ? "hamburgerOn" : "hamburger"}
+        onClick={handleHamburger}
+      />
+
       {/* this will be shown only from large screens */}
       <div className="client-area">
         <div className="client-name">Shivani</div>

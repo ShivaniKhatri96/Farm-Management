@@ -2,14 +2,24 @@
 @import "/src/styles/mixins";
 
 .layoutBody {
-  display: grid;
-  grid-template-columns: 20% 1fr;
-  @include min-xl {
+  @include min-lg {
     display: grid;
+    grid-template-columns: 20% 1fr;
+  }
+  @include min-xl {
     grid-template-columns: 18% 1fr;
   }
 }
 .content {
   position: relative;
-  margin: 7rem 4rem 4rem 6rem;
+  margin: 5.5rem 1.5rem 1.4rem 1.5rem;
+  @include min-sm {
+    margin: 6rem 2rem 1.4rem 2rem;
+  }
+  @include min-md {
+    margin-top: 6.5rem;
+  }
+  @include min-lg {
+    margin: 7rem 3rem 1.4rem 3.5rem;
+  }
 }
