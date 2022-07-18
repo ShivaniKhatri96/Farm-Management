@@ -23,6 +23,7 @@
 - Header 
 - Sidebar
 - Responsive layout for Header and sidebar
+- layout for overview (when user logged in for the first time) + responsive layout
 
 # Responsive layout
 - Desktop version
@@ -35,10 +36,10 @@
 ![mobile version](/public/assets/sidebarMobileOff.jpg) ![mobile version](/public/assets/sidebarMobile.jpg)
 
 ## Currently working on
-- layout for overview (when user logged in for the first time)
+- Welcome page layout
 
 ## Next
--  Welcome page layout
+-  Stable Management page layout 
 
 ## Links
 - Logo from [Adobe logo-maker](https://express.adobe.com/express-apps/logo-maker/)
