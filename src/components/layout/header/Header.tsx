@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import "../header/headerContainer.scss";
 import {
   faCircleUser,
-  faGear,
-  faRightFromBracket,
   faArrowRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,11 +9,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../../app/hooks";
 import { toggleActive, toggleHamburger } from "./headerSlice";
 import { useRef } from "react";
+import { headerMenu } from "../layoutPage/Layout";
 
-const headerMenu = [
-  { name: "Settings", route: "/settings", icon: faGear },
-  { name: "Logout", route: "/welcome", icon: faRightFromBracket },
-];
 const Header = () => {
   const location = useLocation();
   const node = useRef<HTMLDivElement>(null);

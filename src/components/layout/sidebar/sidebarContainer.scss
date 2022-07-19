@@ -15,6 +15,7 @@
   z-index: 1;
   transform: translate(100%);
   transition: transform ease-in-out 0.8s;
+  overflow-y: auto;
   @include min-sm {
     width: 38%;
   }
@@ -40,7 +41,7 @@
 }
 .containerOn {
   @extend .container;
-//for below lg screens 
+  //for below lg screens
   @include max-lg {
     transform: translateX(0);
   }
@@ -70,6 +71,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
+
   @include min-sm {
     padding-top: 1rem;
   }
@@ -99,4 +101,16 @@
 .menu-data {
   @extend .single-menu;
   border: none;
+}
+.menuMobile {
+  display: block;
+  @include min-lg {
+    display: none;
+  }
+}
+.menu-data-mobile {
+  @extend .single-menu;
+  border-bottom: 0;
+  border-top: solid $grey-bordercolor;
+  border-width: 0.12rem;
 }
