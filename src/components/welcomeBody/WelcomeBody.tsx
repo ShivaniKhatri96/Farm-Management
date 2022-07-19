@@ -25,9 +25,9 @@ const WelcomeBody = () => {
             3 step guide to track your farm related data
           </div>
           <ol className="list">
-          <li>Create stable from Stable Management </li>
-          <li>Add groups to your stable from Group Management </li>
-          <li>Add data to your group from Data </li>
+            <li>Create stable from Stable Management </li>
+            <li>Add groups to your stable from Group Management </li>
+            <li>Add data to your group from Data </li>
           </ol>
         </div>
         <div className="signupBtn">SignUp</div>

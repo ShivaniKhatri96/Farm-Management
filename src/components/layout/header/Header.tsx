@@ -60,7 +60,7 @@ const Header = () => {
       {/* will have to change based on whether the user is logged in or not instead of location later on */}
       {location.pathname === "/welcome" ? (
         <div className="login">
-          <FontAwesomeIcon icon={faArrowRightToBracket} /> Login
+          <FontAwesomeIcon icon={faArrowRightToBracket} /> LogIn
         </div>
       ) : (
         <div>
