@@ -1,0 +1,32 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+
+.landscapeImg {
+  display: none;
+  @include min-sm-Landscape {
+    position: fixed;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: calc(100vh - 3.8rem);
+    opacity: 0.7;
+  }
+
+  @include min-md {
+    height: calc(100vh - 4.4rem);
+  }
+}
+.portraitImg {
+  position: fixed;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: calc(100vh - 3.8rem);
+  opacity: 0.85;
+  @include min-sm-Landscape {
+    display: none;
+  }
+  @include min-md {
+    display: none;
+  }
+}

@@ -12,6 +12,7 @@
         @content;
     }
 }
+
 @mixin min-md {
     @media (min-width: $md){
         @content;
@@ -53,6 +54,12 @@
 }
 @mixin max-xs {
     @media (max-width: $sx){
+        @content;
+    }
+}
+// only for this screen
+@mixin min-sm-Landscape {
+    @media only screen and (min-width: $sm) and (orientation: landscape){
         @content;
     }
 }

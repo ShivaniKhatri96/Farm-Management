@@ -13,7 +13,7 @@ const navMenu = [
 ];
 const Sidebar = () => {
   const location = useLocation();
-  const hamburgerOn = useAppSelector(state => state.header.hamburgerOn);
+  const hamburgerOn = useAppSelector((state) => state.header.hamburgerOn);
   return (
     <div className={hamburgerOn ? "containerOn" : "container"}>
       {/* searchbar */}
