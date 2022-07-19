@@ -1,5 +1,6 @@
 @import "/src/styles/variables";
 @import "/src/styles/mixins";
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&family=Solway:wght@300&display=swap");
 
 .landscapeImg {
   display: none;
@@ -28,5 +29,50 @@
   }
   @include min-md {
     display: none;
+  }
+}
+.blackBox {
+  position: absolute;
+  top: 7rem;
+  left: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  border-radius: 0.4rem;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: $white-color;
+}
+.welcomeText {
+  font-family: "Satisfy", cursive;
+  font-size: 2rem;
+}
+.bodyText {
+  font-family: "Solway", serif;
+}
+.secondText {
+  font-size: 0.9rem;
+  padding-bottom: 2rem;
+}
+.thirdText {
+  text-align: center;
+  padding-bottom: 0.2rem;
+  border-bottom: solid 0.1rem;
+  font-size: 1.1rem;
+}
+.list {
+  font-size: 0.9rem;
+}
+.signupBtn {
+  margin-top: 1rem;
+  padding: 0.4rem 1.2rem;
+  background-color: $white-color;
+  color: $black-color;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0.4rem;
+  &:hover {
+    cursor: pointer;
   }
 }
