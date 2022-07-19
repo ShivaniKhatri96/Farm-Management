@@ -1,5 +1,6 @@
 @import "/src/styles/variables";
 @import "/src/styles/mixins";
+
 .header-box {
   position: fixed;
   top: 0;
@@ -126,5 +127,11 @@
   &::after {
     top: 0rem;
     transform: rotate(-130deg);
+  }
+}
+.login {
+  font-weight: 600;
+  &:hover {
+    cursor: pointer;
   }
 }

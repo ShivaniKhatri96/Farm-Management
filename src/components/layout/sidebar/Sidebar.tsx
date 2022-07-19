@@ -4,7 +4,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useLocation } from "react-router-dom";
 import { useAppSelector } from "../../../app/hooks";
-
+import { headerMenu } from "../layoutPage/Layout";
 const navMenu = [
   { name: "Overview", route: "/" },
   { name: "Stable Management", route: "/stables" },
@@ -13,7 +13,7 @@ const navMenu = [
 ];
 const Sidebar = () => {
   const location = useLocation();
-  const hamburgerOn = useAppSelector(state => state.header.hamburgerOn);
+  const hamburgerOn = useAppSelector((state) => state.header.hamburgerOn);
   return (
     <div className={hamburgerOn ? "containerOn" : "container"}>
       {/* searchbar */}
@@ -43,6 +43,13 @@ const Sidebar = () => {
             )} */}
           </div>
         ))}
+        <div className="menuMobile">
+          {headerMenu.map((menu) => (
+            <Link key={menu.name} to={menu.route} className="link-style">
+              <div className="menu-data-mobile">{menu.name}</div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

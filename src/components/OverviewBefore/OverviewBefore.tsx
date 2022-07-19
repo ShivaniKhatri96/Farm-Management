@@ -18,9 +18,9 @@ const OverviewBefore = () => {
       </div>
       <div className="grid-2">
         <ul>
-          <li>Create stables from Stable Management </li>
+          <li>Create stable from Stable Management </li>
           <li>Add groups to your stable from Group Management </li>
-          <li>Add data to your groups from Data </li>
+          <li>Add data to your group from Data </li>
         </ul>
       </div>
       <div className="grid-3">

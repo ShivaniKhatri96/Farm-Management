@@ -2,20 +2,17 @@ import React, { useEffect } from "react";
 import "../header/headerContainer.scss";
 import {
   faCircleUser,
-  faGear,
-  faRightFromBracket,
+  faArrowRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../../app/hooks";
 import { toggleActive, toggleHamburger } from "./headerSlice";
 import { useRef } from "react";
+import { headerMenu } from "../layoutPage/Layout";
 
-const headerMenu = [
-  { name: "Settings", route: "/settings", icon: faGear },
-  { name: "Logout", route: "/welcome", icon: faRightFromBracket },
-];
 const Header = () => {
+  const location = useLocation();
   const node = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const active = useAppSelector((state) => state.header.active);
@@ -55,37 +52,45 @@ const Header = () => {
           width="160px"
         />
       </Link>
-      {/* below large screens */}
-      <div
-        className={hamburgerOn ? "hamburgerOn" : "hamburger"}
-        onClick={handleHamburger}
-      />
-
-      {/* this will be shown only from large screens */}
-      <div className="client-area">
-        <div className="client-name">Shivani</div>
-        <div ref={node}>
-          <div onClick={handleClient}>
-            <FontAwesomeIcon icon={faCircleUser} className="circle" />
-          </div>
-          {/* dropdown items */}
-          {active && (
-            <div className="dropdown-client">
-              {headerMenu.map((menu) => (
-                <Link
-                  key={menu.name}
-                  className="dropdown-content"
-                  to={menu.route}
-                  onClick={handleClient}
-                >
-                  <FontAwesomeIcon icon={menu.icon} className="icon-gap" />
-                  {menu.name}
-                </Link>
-              ))}
-            </div>
-          )}
+      {/* will have to change based on whether the user is logged in or not instead of location later on */}
+      {location.pathname === "/welcome" ? (
+        <div className="login">
+          <FontAwesomeIcon icon={faArrowRightToBracket} /> LogIn
         </div>
-      </div>
+      ) : (
+        <div>
+          {/* below large screens */}
+          <div
+            className={hamburgerOn ? "hamburgerOn" : "hamburger"}
+            onClick={handleHamburger}
+          />
+          {/* this will be shown only from large screens */}
+          <div className="client-area">
+            <div className="client-name">Shivani</div>
+            <div ref={node}>
+              <div onClick={handleClient}>
+                <FontAwesomeIcon icon={faCircleUser} className="circle" />
+              </div>
+              {/* dropdown items */}
+              {active && (
+                <div className="dropdown-client">
+                  {headerMenu.map((menu) => (
+                    <Link
+                      key={menu.name}
+                      className="dropdown-content"
+                      to={menu.route}
+                      onClick={handleClient}
+                    >
+                      <FontAwesomeIcon icon={menu.icon} className="icon-gap" />
+                      {menu.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

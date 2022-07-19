@@ -1,0 +1,122 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins";
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&family=Solway:wght@300&display=swap");
+
+.landscapeImg {
+  display: none;
+  @include min-sm-Landscape {
+    position: fixed;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: calc(100vh - 3.8rem);
+    opacity: 0.7;
+  }
+
+  @include min-md {
+    height: calc(100vh - 4.4rem);
+  }
+}
+.portraitImg {
+  position: fixed;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: calc(100vh - 3.8rem);
+  opacity: 0.85;
+  @include min-sm-Landscape {
+    display: none;
+  }
+  @include min-md {
+    display: none;
+  }
+  @include min-md-portrait {
+    display: block;
+  }
+}
+.blackBox {
+  position: absolute;
+  top: 7rem;
+  left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  padding: 3rem 0.5rem;
+  border-radius: 0.4rem;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: $white-color;
+  @include min-sm {
+    top: 10rem;
+    left: 9rem;
+    width: auto;
+    padding: 3rem 1.5rem;
+  }
+  @include min-sm-Landscape {
+    top: 6rem;
+    left: 7rem;
+
+    width: auto;
+  }
+  @include min-lg {
+    top: 7rem;
+    left: 4rem;
+    padding: 3rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+}
+.welcomeText {
+  font-family: "Satisfy", cursive;
+  font-size: 1.8rem;
+  @include min-lg {
+    font-size: 2rem;
+  }
+}
+.bodyText {
+  font-family: "Solway", serif;
+}
+.secondText {
+  padding-bottom: 1.6rem;
+  text-align: center;
+  font-size: 0.9rem;
+
+  @include min-lg {
+    padding-bottom: 2rem;
+  }
+}
+.thirdText {
+  padding-bottom: 0.2rem;
+  text-align: center;
+  border-bottom: solid 0.1rem;
+  font-size: 0.9rem;
+  @include min-lg {
+    font-size: 1.1rem;
+  }
+}
+.list {
+  padding-top: 0.2rem;
+  font-size: 0.9rem;
+  li {
+    padding-bottom: 0.5rem;
+  }
+  @include min-lg {
+    padding-top: 0.5rem;
+  }
+}
+.signupBtn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1.8rem;
+  background-color: $white-color;
+  color: $black-color;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  &:hover {
+    cursor: pointer;
+    background-color: $sidebar-green;
+  }
+  @include min-lg {
+    padding: 0.5rem 1.6rem;
+  }
+}

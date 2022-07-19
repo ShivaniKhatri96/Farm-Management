@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/layout/header/Header";
 import Dashboard from "./pages/Dashboard";
 import Data from "./pages/Data";
@@ -18,7 +18,6 @@ function App() {
         <Route path="/data" element={<Data />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/settings" element={<Settings />} />
-        
       </Routes>
     </div>
   );
