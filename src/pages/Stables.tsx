@@ -5,7 +5,7 @@ import Layout from "../components/layout/layoutPage/Layout";
 const Stables = () => {
   return (
     <Layout>
-      <CreateBox />
+      <CreateBox  page={"Stable Management"} add={"stable"} to={"farm"}/>
     </Layout>
   );
 };
