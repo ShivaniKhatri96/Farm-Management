@@ -1,71 +1,78 @@
 @import "./variables";
 
+//white box
+@mixin box {
+  padding: 1.5rem 2rem 2rem;
+  background-color: $white-color;
+  border-radius: 0.6rem;
+  @content;
+}
 //for mobile to desktop
 // for example: $sm (600px) will be included, it's 600px and
 @mixin min-xs {
-    @media (min-width: $sx){
-        @content;
-    }
+  @media (min-width: $sx) {
+    @content;
+  }
 }
 @mixin min-sm {
-    @media (min-width: $sm){
-        @content;
-    }
+  @media (min-width: $sm) {
+    @content;
+  }
 }
 
 @mixin min-md {
-    @media (min-width: $md){
-        @content;
-    }
+  @media (min-width: $md) {
+    @content;
+  }
 }
 @mixin min-lg {
-    @media (min-width: $lg){
-        @content;
-    }
+  @media (min-width: $lg) {
+    @content;
+  }
 }
 @mixin min-xl {
-    @media (min-width: $xl){
-        @content;
-    }
+  @media (min-width: $xl) {
+    @content;
+  }
 }
 
 //for desktop to mobile
 // for example: $sm (600px) won't be included, it's below 600px
 
 @mixin max-xl {
-    @media (max-width: $xl){
-        @content;
-    }
+  @media (max-width: $xl) {
+    @content;
+  }
 }
 @mixin max-lg {
-    @media (max-width: $lg){
-        @content;
-    }
+  @media (max-width: $lg) {
+    @content;
+  }
 }
 @mixin max-md {
-    @media (max-width: $md){
-        @content;
-    }
+  @media (max-width: $md) {
+    @content;
+  }
 }
 @mixin max-sm {
-    @media (max-width: $sm){
-        @content;
-    }
+  @media (max-width: $sm) {
+    @content;
+  }
 }
 @mixin max-xs {
-    @media (max-width: $sx){
-        @content;
-    }
+  @media (max-width: $sx) {
+    @content;
+  }
 }
 // for this screen with landscape
 @mixin min-sm-Landscape {
-    @media only screen and (min-width: $sm) and (orientation: landscape){
-        @content;
-    }
+  @media only screen and (min-width: $sm) and (orientation: landscape) {
+    @content;
+  }
 }
 // for this screen with portrait
 @mixin min-md-portrait {
-    @media only screen and (min-width: $md) and (orientation: portrait){
-        @content;
-    }
+  @media only screen and (min-width: $md) and (orientation: portrait) {
+    @content;
+  }
 }
