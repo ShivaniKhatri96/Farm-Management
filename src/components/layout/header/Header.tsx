@@ -21,7 +21,6 @@ const Header = () => {
   const handleHamburger = () => {
     dispatch(toggleHamburger());
   };
-  console.log(hamburgerOn);
   // for dropdown with settings and logout with redux
   const handleClient = () => {
     dispatch(toggleActive());

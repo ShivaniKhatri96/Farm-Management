@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/layout/header/Header";
-import Dashboard from "./pages/Dashboard";
-import Data from "./pages/Data";
-import Groups from "./pages/Groups";
-import Settings from "./pages/Settings";
-import Stables from "./pages/Stables";
-import Welcome from "./pages/Welcome";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Data from "./pages/data/Data";
+import Groups from "./pages/groups/Groups";
+import Settings from "./pages/settings/Settings";
+import Stables from "./pages/stables/Stables";
+import Welcome from "./pages/welcome/Welcome";
 
 function App() {
   return (

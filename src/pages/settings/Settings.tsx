@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from "../components/layout/layoutPage/Layout";
+import Layout from "../../components/layout/layoutPage/Layout";
 const Settings = () => {
   return (
     <Layout>Settings</Layout>
