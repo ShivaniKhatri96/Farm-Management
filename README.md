@@ -21,6 +21,7 @@
 - React Testing Library (for testing with Jest)
 - Cypress (will be later used for End to End testing)
 - Figma (for designing the website)
+- React Hook Form (for react form validations)
 
 ## Completed
 
