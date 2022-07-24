@@ -22,6 +22,7 @@
 - Cypress (will be later used for End to End testing)
 - Figma (for designing the website)
 - React Hook Form (for react form validations)
+- Keycloak (for identity and access management)
 
 ## Completed
 

@@ -1,7 +1,13 @@
 import React from "react";
 import "./StableForm.scss";
 const StableForm = () => {
-  return <div className="stableForm">StableForm</div>;
+  return (
+    <div className="modalContainer">
+      <div className="stableForm">
+        
+      </div>
+    </div>
+  );
 };
 
 export default StableForm;
