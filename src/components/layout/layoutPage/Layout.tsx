@@ -2,14 +2,11 @@ import React, { FC } from "react";
 import Header from "../header/Header";
 import Sidebar from "../sidebar/Sidebar";
 import "../layoutPage/layoutPage.scss";
-import {
-  faGear,
-  faRightFromBracket,
-} from "@fortawesome/free-solid-svg-icons";
+import { faGear, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 export const headerMenu = [
   { name: "Settings", route: "/settings", icon: faGear },
-  { name: "Logout", route: "/welcome", icon: faRightFromBracket },
+  { name: "Logout", route: "/", icon: faRightFromBracket },
 ];
 
 type Props = {

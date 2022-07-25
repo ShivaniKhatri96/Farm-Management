@@ -3,9 +3,7 @@ import "./StableForm.scss";
 const StableForm = () => {
   return (
     <div className="modalContainer">
-      <div className="stableForm">
-        
-      </div>
+      <div className="stableForm"></div>
     </div>
   );
 };

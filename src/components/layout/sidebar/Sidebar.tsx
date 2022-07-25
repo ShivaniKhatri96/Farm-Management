@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useLocation } from "react-router-dom";
 import { useAppSelector } from "../../../app/hooks";
 import { headerMenu } from "../layoutPage/Layout";
+import UserService from "../../../services/UserService";
 const navMenu = [
   { name: "Overview", route: "/" },
   { name: "Stable Management", route: "/stables" },
@@ -14,6 +15,11 @@ const navMenu = [
 const Sidebar = () => {
   const location = useLocation();
   const hamburgerOn = useAppSelector((state) => state.header.hamburgerOn);
+  const handleDropdown = (name: string) => {
+    if (name === "Logout") {
+      UserService.doLogout();
+    }
+  };
   return (
     <div className={hamburgerOn ? "containerOn" : "container"}>
       {/* searchbar */}
@@ -45,7 +51,14 @@ const Sidebar = () => {
         ))}
         <div className="menuMobile">
           {headerMenu.map((menu) => (
-            <Link key={menu.name} to={menu.route} className="link-style">
+            <Link
+              key={menu.name}
+              to={menu.route}
+              className="link-style"
+              onClick={() => {
+                handleDropdown(menu.name);
+              }}
+            >
               <div className="menu-data-mobile">{menu.name}</div>
             </Link>
           ))}

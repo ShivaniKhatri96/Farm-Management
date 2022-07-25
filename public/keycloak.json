@@ -1,0 +1,9 @@
+{
+    "realm": "farm-management",
+    "auth-server-url": "http://localhost:3380/",
+    "ssl-required": "external",
+    "resource": "farm-management-app",
+    "public-client": true,
+    "verify-token-audience": true,
+    "confidential-port": 0
+  }

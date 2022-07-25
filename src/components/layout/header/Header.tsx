@@ -5,14 +5,14 @@ import {
   faArrowRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../../app/hooks";
 import { toggleActive, toggleHamburger } from "./headerSlice";
 import { useRef } from "react";
 import { headerMenu } from "../layoutPage/Layout";
+import UserService from "../../../services/UserService";
 
 const Header = () => {
-  const location = useLocation();
   const node = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const active = useAppSelector((state) => state.header.active);
@@ -24,6 +24,11 @@ const Header = () => {
   // for dropdown with settings and logout with redux
   const handleClient = () => {
     dispatch(toggleActive());
+  };
+  const handleDropdown = (name: string) => {
+    if (name === "Logout") {
+      UserService.doLogout();
+    }
   };
 
   const clickOutside = (e: any) => {
@@ -51,9 +56,9 @@ const Header = () => {
           width="160px"
         />
       </Link>
-      {/* will have to change based on whether the user is logged in or not instead of location later on */}
-      {location.pathname === "/welcome" ? (
-        <div className="login">
+      {/*based on whether the user is logged in or not*/}
+      {!UserService.isLoggedIn() ? (
+        <div className="login" onClick={() => UserService.doLogin()}>
           <FontAwesomeIcon icon={faArrowRightToBracket} /> LogIn
         </div>
       ) : (
@@ -78,7 +83,10 @@ const Header = () => {
                       key={menu.name}
                       className="dropdown-content"
                       to={menu.route}
-                      onClick={handleClient}
+                      onClick={() => {
+                        handleDropdown(menu.name);
+                        handleClient();
+                      }}
                     >
                       <FontAwesomeIcon icon={menu.icon} className="icon-gap" />
                       {menu.name}

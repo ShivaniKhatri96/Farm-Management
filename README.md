@@ -56,6 +56,7 @@
 
 - Logo from [Adobe logo-maker](https://express.adobe.com/express-apps/logo-maker/)
 - Pictures from [pexels.com](https://www.pexels.com/)
+- keycloak integration with react tutorial followed from: https://github.com/dasniko/keycloak-reactjs-demo/
 
 ## More About this Project
 
