@@ -1,0 +1,71 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.grid-box {
+  display: flex;
+  justify-content: center;
+}
+.create-box {
+  @include box;
+  width: 100%;
+  padding: 0.6rem 1.5rem 1.5rem;
+  @include min-sm {
+    padding: 1rem 2.5rem 2.5rem;
+  }
+  @include min-md {
+    width: 80%;
+  }
+}
+.body-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 2.5rem 2rem 1.5rem;
+  border: 2px dashed $grey-bordercolor;
+  border-radius: 0.35rem;
+
+  @include min-sm {
+    gap: 0.3rem;
+    padding: 4.5rem 4rem 3.5rem;
+  }
+  @include min-sm-Landscape {
+    padding: 2.5rem 2rem 1.5rem;
+  }
+  @include min-md {
+    padding: 4.5rem 4rem 3.5rem;
+  }
+}
+.name {
+  padding-bottom: 0.5rem;
+  color: $body-green;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  @include min-lg {
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+.form-button {
+  padding: 0.5rem 3rem 0.6rem;
+  background-color: $button-green;
+  border-radius: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  &:hover {
+    cursor: pointer;
+    background-color: $button-hover;
+  }
+}
+.text {
+  font-size: 0.8rem;
+  color: $grey-boxText;
+  word-spacing: 0rem;
+  @include min-lg {
+    font-size: 0.9rem;
+    word-spacing: 0.1rem;
+  }
+}
