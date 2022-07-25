@@ -32,6 +32,7 @@
 - Sidebar
 - layout for overview (when user logged in for the first time)
 - Welcome page layout
+- Login page (via Keycloak.js)
 
 # Responsive layout
 
@@ -50,7 +51,6 @@
 ## Next
 
 - Group Management page layout
-- Login/Signup
 
 ## Links
 
