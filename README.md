@@ -51,6 +51,8 @@
 ## Next
 
 - Group Management page layout
+- Data Management page layout
+- internationalization
 
 ## Links
 
