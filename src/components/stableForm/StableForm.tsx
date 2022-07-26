@@ -1,9 +1,42 @@
 import React from "react";
-import "./StableForm.scss";
+import "../../styles/_global.scss";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { toggleStableActive } from "../../pages/stables/stableSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
+
 const StableForm = () => {
+  const dispatch = useAppDispatch();
+  const formActive = useAppSelector((state) => state.stable.stableFormActive);
+  const handleClose = () => {
+    dispatch(toggleStableActive());
+  };
   return (
-    <div className="modalContainer">
-      <div className="stableForm"></div>
+    <div className={formActive ? "modalContainer" : "modalClose"}>
+      <div className="form">
+        <div className="closeButton">
+          <FontAwesomeIcon icon={faWindowClose} onClick={handleClose} />
+        </div>
+        <div className="formBody">
+          <div>
+            <div className="formTitle">Create Stable</div>
+            <div className="formTitleSecond">
+              Fill this form to create a Stable
+            </div>
+          </div>
+          <div className="formInputs">
+            <div>
+              <label className="formLabel">Stable Name</label>
+              <input className="formInput" />
+            </div>
+            <div>
+              <label className="formLabel">Location</label>
+              <input className="formInput" />
+            </div>
+          </div>
+          <input type="submit" className="formSubmit" />
+        </div>
+      </div>
     </div>
   );
 };

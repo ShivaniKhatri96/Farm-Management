@@ -3,17 +3,104 @@
   box-sizing: border-box;
 }
 body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: $background-green;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $background-green;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+//for forms
+.modalContainer {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.modalClose {
+  @extend .modalContainer;
+  display: none;
+}
+
+.form {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  width: 20rem;
+  border-radius: 0.4rem;
+  border-bottom: solid $border-green 1rem;
+  background-color: $white-color;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  z-index: 1000;
+}
+.closeButton {
+  display: flex;
+  justify-content: end;
+  padding-right: 1rem;
+  font-size: 1.7rem;
+  color: $body-green;
+  &:hover {
+    cursor: pointer;
+    color: $hover-closeButton;
   }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+}
+.formBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0 2.5rem;
+}
+.formTitle {
+  font-size: 1.6rem;
+  color: $body-green;
+}
+.formTitleSecond {
+  font-size: 0.9rem;
+  color: $grey-boxText;
+}
+.formInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.formLabel {
+  display: block;
+  padding-bottom: 0.3rem;
+  color: $black-color;
+  font-size: 1rem;
+}
+.formInput {
+  width: 100%;
+  height: 2rem;
+  border: solid $grey-boxText 1px;
+  border-radius: 0.2rem;
+}
+.formSubmit {
+  width: 100%;
+  height: 2.4rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  background-color: $button-green;
+  &:hover {
+    cursor: pointer;
+    background-color: $button-hover;
   }
+}
