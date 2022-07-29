@@ -26,12 +26,12 @@ const StableForm = () => {
           </div>
           <div className="formInputs">
             <div>
-              <label className="formLabel">Stable Name</label>
-              <input className="formInput" />
+              <label className="formLabel" >Stable name</label>
+              <input className="formInput" placeholder="Enter a name" />
             </div>
             <div>
               <label className="formLabel">Location</label>
-              <input className="formInput" />
+              <input className="formInput" placeholder="Enter a location" />
             </div>
           </div>
           <input type="submit" className="formSubmit" />

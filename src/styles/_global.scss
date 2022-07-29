@@ -116,7 +116,7 @@ code {
   color: $body-green;
 }
 .formTitleSecond {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: $grey-boxText;
 }
 .formInputs {
@@ -126,16 +126,17 @@ code {
 }
 .formLabel {
   display: block;
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.5rem;
   color: $black-color;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-transform: capitalize;
 }
 .formInput {
   width: 100%;
-  height: 2rem;
+  padding: 0.6rem 0.8rem;
   border: solid $grey-boxText 1px;
-  border-radius: 0.2rem;
+  border-color: $grey-bordercolor;
+  border-radius: 0.3rem;
 }
 .formSubmit {
   width: 100%;

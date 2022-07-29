@@ -1,5 +1,5 @@
 export const colorStyles = {
-  control: (styles, isFocused, isSelected) => ({
+  control: (styles) => ({
     ...styles,
     border: "solid #3f433d 1px",
     boxShadow: "none",
