@@ -117,7 +117,7 @@ code {
 }
 .formTitleSecond {
   font-size: 0.8rem;
-  color: $grey-boxText;
+  color: $client-grey;
 }
 .formInputs {
   display: flex;
@@ -127,15 +127,19 @@ code {
 .formLabel {
   display: block;
   padding-bottom: 0.5rem;
-  color: $black-color;
+  color: $grey-boxText;
   font-size: 0.9rem;
-  text-transform: capitalize;
 }
 .formInput {
   width: 100%;
   padding: 0.6rem 0.8rem;
   border: solid $grey-bordercolor 1px;
   border-radius: 0.3rem;
+  font-size: 0.84rem;
+  color: $black-color;
+  &::placeholder {
+    color: $placeholder-grey;
+  }
 }
 .formSubmit {
   width: 100%;
@@ -144,6 +148,7 @@ code {
   border-radius: 0.3rem;
   font-size: 1rem;
   background-color: $button-green;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   &:hover {
     cursor: pointer;
     background-color: $button-hover;

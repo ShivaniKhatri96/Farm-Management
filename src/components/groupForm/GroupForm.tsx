@@ -24,16 +24,20 @@ const GroupForm = () => {
           </div>
           <div className="formInputs">
             <div>
-              <label className="formLabel">Select Stable</label>
+              <label className="formLabel">Select stable</label>
               <Select options={options} styles={colorStyles} />
             </div>
             <div>
-              <label className="formLabel">Group Name</label>
-              <input className="formInput" />
+              <label className="formLabel">Group name</label>
+              <input className="formInput" placeholder="Enter a group name" />
             </div>
             <div>
-              <label className="formLabel">Number of Animals</label>
-              <input className="formInput" />
+              <label className="formLabel">Number of animals</label>
+              <input
+                className="formInput"
+                type="number"
+                placeholder="Enter number of animals"
+              />
             </div>
             <div>
               <label className="formLabel">Start date</label>
