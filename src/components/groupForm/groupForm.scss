@@ -1,0 +1,38 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+@import "../../styles/_global.scss";
+@import "react-datepicker/dist/react-datepicker.css";
+
+.react-datepicker {
+  border: solid $grey-bordercolor 1px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+.react-datepicker__header {
+  background-color: $sidebar-green;
+}
+.react-datepicker__current-month {
+  color: $sidebar-fontcolor;
+}
+.react-datepicker__day-name {
+  color: $sidebar-fontcolor;
+  font-weight: 500;
+}
+.react-datepicker__day {
+  &:hover {
+    background-color: $hover-bg;
+  }
+}
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: $border-green !important;
+  &:hover {
+    background-color: $border-green !important;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+

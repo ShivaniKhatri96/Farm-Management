@@ -11,7 +11,7 @@ export const colorStyles = {
       ...styles,
       fontSize: "0.9rem",
       "&:hover": {
-        backgroundColor: isSelected ? "#36443C" : "#f4f7f6",
+        backgroundColor: isSelected ? "#36443C" : "#eaf5f2",
       },
       backgroundColor: isSelected ? "#36443C" : "$white-color",
     };
