@@ -12,7 +12,6 @@ const Groups = () => {
       dispatch(toggleGroupActive());
     }
   };
- console.log(groupActive);
   return (
     <Layout>
       <GroupForm />

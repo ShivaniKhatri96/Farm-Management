@@ -9,7 +9,9 @@ const StableForm = () => {
   const dispatch = useAppDispatch();
   const formActive = useAppSelector((state) => state.stable.stableFormActive);
   const handleClose = () => {
-    dispatch(toggleStableActive());
+    if (formActive === true) {
+      dispatch(toggleStableActive());
+    }
   };
   return (
     <div className={formActive ? "modalContainer" : "modalClose"}>

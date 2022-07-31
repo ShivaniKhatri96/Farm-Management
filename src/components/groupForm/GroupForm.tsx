@@ -10,11 +10,15 @@ import "./groupForm.scss";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { toggleGroupActive } from "../../pages/groups/groupSlice";
 const GroupForm = () => {
-    const dispatch = useAppDispatch();
-    const groupFormActive = useAppSelector((state) => state.group.groupFormActive);
-    const handleGroupClose = () => {
+  const dispatch = useAppDispatch();
+  const groupFormActive = useAppSelector(
+    (state) => state.group.groupFormActive
+  );
+  const handleGroupClose = () => {
+    if (groupFormActive === true) {
       dispatch(toggleGroupActive());
-    };
+    }
+  };
   // temporary options
   const options = [
     { value: "chocolate", label: "Chocolate" },
@@ -27,7 +31,7 @@ const GroupForm = () => {
   const [endDate, setEndDate] = useState<Date | null>(null);
 
   return (
-    <div className={groupFormActive? "modalContainer" : "modalClose"}>
+    <div className={groupFormActive ? "modalContainer" : "modalClose"}>
       <div className="form">
         <div className="closeButton">
           <FontAwesomeIcon icon={faWindowClose} onClick={handleGroupClose} />

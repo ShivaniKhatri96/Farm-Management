@@ -152,9 +152,15 @@ code {
   border-radius: 0.3rem;
   font-size: 1rem;
   background-color: $button-green;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   &:hover {
     cursor: pointer;
     background-color: $button-hover;
   }
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
