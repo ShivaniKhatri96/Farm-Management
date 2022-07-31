@@ -22,29 +22,28 @@
     background-color: $hover-bg;
   }
 }
-.react-datepicker__day--selected,
-.react-datepicker__day--keyboard-selected {
+.react-datepicker__day--disabled {
+  &:hover {
+    background-color: $inactive-bg;
+  }
+}
+.react-datepicker__day--keyboard-selected,
+.react-datepicker__day--selected {
   background-color: $border-green !important;
   &:hover {
     background-color: $border-green !important;
   }
 }
-
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
-.gridActive {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-}
 .inactiveBtn {
   width: 100%;
   padding: 0.7rem 1rem;
-  background-color: #f2f2f2;
-  color: #4f4c4c;
+  background-color: $inactive-bg;
+  color: $inactive-color;
   text-align: center;
   border-radius: 0.3rem;
 }
