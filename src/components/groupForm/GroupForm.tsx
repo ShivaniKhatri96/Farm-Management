@@ -35,20 +35,20 @@ const GroupForm = () => {
               <Select options={options} styles={colorStyles} />
             </div>
             <div className="grid">
-            <div>
-              <label className="formLabel">Group name</label>
-              <input className="formInput" placeholder="Enter a group name" />
+              <div>
+                <label className="formLabel">Group name</label>
+                <input className="formInput" placeholder="Enter a group name" />
+              </div>
+              <div>
+                <label className="formLabel">No. of animals</label>
+                <input
+                  className="formInput"
+                  type="number"
+                  placeholder="Enter total animals"
+                />
+              </div>
             </div>
-            <div>
-              <label className="formLabel">Number of animals</label>
-              <input
-                className="formInput"
-                type="number"
-                placeholder="Enter total animals"
-              />
-            </div>
-            </div>
-            
+
             <div className="grid">
               <div>
                 <label className="formLabel">Start date</label>
@@ -72,7 +72,10 @@ const GroupForm = () => {
 
             <div>
               <label className="formLabel">Status</label>
-              <input className="formInput" />
+              <div className="grid">
+                <div className="toggleActiveBtn">Active</div>
+                <div className="inactiveBtn">Inactive</div>
+              </div>
             </div>
           </div>
           <input type="submit" className="formSubmit" />
