@@ -12,7 +12,7 @@ const Stables = () => {
       dispatch(toggleStableActive());
     }
   };
-  console.log(stableActive);
+  // console.log(stableActive);
   return (
     <Layout>
       <StableForm />

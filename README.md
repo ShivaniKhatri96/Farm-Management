@@ -23,6 +23,8 @@
 - Figma (for designing the website)
 - React Hook Form (for react form validations)
 - Keycloak (for identity and access management)
+- react-select (for selection)
+- react-datepicker (for selecting a date)
 
 ## Completed
 
@@ -51,6 +53,8 @@
 ## Next
 
 - Group Management page layout
+- Data Management page layout
+- internationalization
 
 ## Links
 

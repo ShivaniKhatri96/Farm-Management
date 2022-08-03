@@ -1,19 +1,169 @@
 @import "../styles/variables";
+@import "../styles/mixins";
+
 * {
   box-sizing: border-box;
 }
 body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: $background-green;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $background-green;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+//for forms
+.modalContainer {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.modalClose {
+  @extend .modalContainer;
+  display: none;
+}
+
+.form {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  // center start
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  // end
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  width: 96%;
+  height: 98%;
+  overflow-y: auto;
+  border-radius: 0.4rem;
+  border-bottom: solid $border-green 1rem;
+  background-color: $white-color;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  z-index: 1000;
+
+  @include min-sm {
+    top: 10%;
+    left: 22%;
+    right: auto;
+    bottom: auto;
+    width: 30rem;
+    height: auto;
   }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+  @include min-sm-Landscape {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 22rem;
   }
+  @include min-md {
+    top: 12%;
+    left: 32%;
+    right: auto;
+    bottom: auto;
+    height: auto;
+  }
+  @include min-md-portrait {
+    top: 8%;
+    left: 28%;
+  }
+
+  @include min-lg {
+    left: 46%;
+    top: 12%;
+  }
+}
+.closeButton {
+  display: flex;
+  justify-content: end;
+  padding-right: 1.4rem;
+  font-size: 1.7rem;
+  color: $body-green;
+  &:hover {
+    cursor: pointer;
+    color: $hover-closeButton;
+  }
+}
+.formBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0 3rem;
+}
+.formTitle {
+  font-size: 1.6rem;
+  color: $body-green;
+}
+.formTitleSecond {
+  font-size: 0.8rem;
+  color: $client-grey;
+}
+.formInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.formLabel {
+  display: block;
+  padding-bottom: 0.5rem;
+  color: $grey-boxText;
+  font-size: 0.9rem;
+}
+.formInput {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: solid $grey-bordercolor 1px;
+  border-radius: 0.3rem;
+  font-size: 0.84rem;
+  color: $black-color;
+  &::placeholder {
+    color: $placeholder-grey;
+  }
+}
+.formSubmit {
+  width: 100%;
+  padding: 0.65rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  background-color: $button-green;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  &:hover {
+    cursor: pointer;
+    background-color: $button-hover;
+  }
+}
+.gridForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+  @include min-sm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+.gridStatus {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}

@@ -3,7 +3,10 @@
 //grey shades
 $client-grey: #7f8487;
 $grey-bordercolor: #cdd0cb;
-$grey-boxText: #3F433D;
+$grey-boxText: #3f433d;
+$placeholder-grey: #a1a2a9;
+$inactive-color: #4f4c4c;
+$inactive-bg: #f2f2f2;
 
 //black and white
 $white-color: #ffffff;
@@ -14,14 +17,17 @@ $dark-red: #7c0952;
 $hover-red: #690745;
 
 //greens shades
+$hover-bg: #eaf5f2;
 $background-green: #f4f7f6;
 $sidebar-green: #e4efe7;
 $sidebar-fontcolor: #053d1d;
 $body-green: #064420;
+$hover-closeButton: #245236;
 $hover-green: #88bfa1;
 $box-green: #244736;
 $button-green: #cfdac8;
 $button-hover: #c0cbb9;
+$border-green: #698474;
 //screen sizes
 $xs: "0px";
 $sm: "600px";
