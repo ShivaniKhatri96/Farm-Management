@@ -18,10 +18,10 @@
 - Redux (for State management)
 - Font Awesome (for icons)
 - Chart.js (will be included later for graphs)
-- React Testing Library (for testing with Jest)
+- React Testing Library (will be later used for testing with Jest)
 - Cypress (will be later used for End to End testing)
 - Figma (for designing the website)
-- React Hook Form (for react form validations)
+- React Hook Form (will be later used for react form validations)
 - Keycloak (for identity and access management)
 - react-select (for selection)
 - react-datepicker (for selecting a date)
@@ -35,6 +35,7 @@
 - layout for overview (when user logged in for the first time)
 - Welcome page layout
 - Login page (via Keycloak.js)
+- Forms layout for Stable, Group and Data pages created
 
 # Responsive layout
 
@@ -48,19 +49,18 @@
 
 ## Currently working on
 
-- Stable Management page layout
+- Table layout for stable, group and data pages
 
 ## Next
 
-- Group Management page layout
-- Data Management page layout
 - internationalization
+- Adding functionalities to forms including validations, connecting to backend and testing
 
 ## Links
 
 - Logo from [Adobe logo-maker](https://express.adobe.com/express-apps/logo-maker/)
 - Pictures from [pexels.com](https://www.pexels.com/)
-- keycloak integration with react tutorial followed from: https://github.com/dasniko/keycloak-reactjs-demo/
+- keycloak integration with react tutorial followed from [dasniko](https://github.com/dasniko/keycloak-reactjs-demo/)
 
 ## More About this Project
 
