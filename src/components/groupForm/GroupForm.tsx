@@ -48,7 +48,7 @@ const GroupForm = () => {
               <label className="formLabel">Select stable</label>
               <Select options={options} styles={colorStyles} />
             </div>
-            <div className="grid">
+            <div className="gridForm">
               <div>
                 <label className="formLabel">Group name</label>
                 <input className="formInput" placeholder="Enter a group name" />
@@ -63,7 +63,7 @@ const GroupForm = () => {
               </div>
             </div>
 
-            <div className="grid">
+            <div className="gridForm">
               <div>
                 <label className="formLabel">Start date</label>
                 <ReactDatePicker
@@ -88,7 +88,7 @@ const GroupForm = () => {
             </div>
             <div>
               <label className="formLabel">Status</label>
-              <div className="grid">
+              <div className="gridStatus">
                 <div className="toggleActiveBtn">Active</div>
                 <div className="inactiveBtn">Inactive</div>
               </div>

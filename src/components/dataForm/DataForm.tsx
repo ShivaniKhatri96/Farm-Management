@@ -50,7 +50,7 @@ const DataForm = () => {
                 minDate={new Date()}
               />
             </div>
-            <div className="grid">
+            <div className="gridForm">
               <div>
                 <label className="formLabel">Select stable</label>
                 <Select options={options} styles={colorStyles} />
@@ -64,7 +64,7 @@ const DataForm = () => {
               <label className="formLabel">Feed intake(kg)</label>
               <input className="formInput" placeholder="Enter feed intake" />
             </div>
-            <div className="grid">
+            <div className="gridForm">
               <div>
                 <label className="formLabel">Water intake(l)</label>
                 <input className="formInput" placeholder="Enter water intake" />

@@ -61,10 +61,9 @@ code {
 
   @include min-sm {
     top: 10%;
-    left: 30%;
+    left: 22%;
     right: auto;
     bottom: auto;
-    // width: 22rem;
     width: 30rem;
     height: auto;
   }
@@ -76,30 +75,25 @@ code {
     height: 22rem;
   }
   @include min-md {
-    top: 20%;
-    left: 34%;
+    top: 12%;
+    left: 32%;
     right: auto;
     bottom: auto;
     height: auto;
   }
   @include min-md-portrait {
-    top: 11%;
-    left: 34%;
+    top: 8%;
+    left: 28%;
   }
 
   @include min-lg {
-    // top: 20%;
     left: 46%;
     top: 12%;
-  }
-  @include min-xl {
-    // left: 50%;
   }
 }
 .closeButton {
   display: flex;
   justify-content: end;
-  // padding-right: 1rem;
   padding-right: 1.4rem;
   font-size: 1.7rem;
   color: $body-green;
@@ -112,7 +106,6 @@ code {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  // padding: 0 2.5rem;
   padding: 0 3rem;
 }
 .formTitle {
@@ -159,7 +152,17 @@ code {
     background-color: $button-hover;
   }
 }
-.grid {
+.gridForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+  @include min-sm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+.gridStatus {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
