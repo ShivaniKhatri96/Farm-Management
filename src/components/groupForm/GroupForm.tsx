@@ -3,7 +3,7 @@ import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import Select from "react-select";
-import { colorStyles } from "../../styles/SelectStyles";
+import { colorStyles } from "../../reactSelectStyles/SelectStyles";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./groupForm.scss";

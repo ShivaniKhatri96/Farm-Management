@@ -19,7 +19,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+//checkbox styles
+.bulletDiv {
+  display: flex;
+  align-self: flex-end;
+  width: 1rem;
+  height: 1rem;
+  border: solid $grey-bordercolor 1px;
+  border-radius: 0.2rem;
+}
 //for forms
 .modalContainer {
   display: block;
