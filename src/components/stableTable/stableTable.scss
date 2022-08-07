@@ -7,16 +7,22 @@
 }
 .tableBox {
   @include box;
-  width: 100%;
+  width: 80%;
   margin-top: 2rem;
-  // width: 95%;
   padding: 1rem 2.5rem 2.5rem;
 }
-.gridRow {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    // gap: 1rem;
+.innerBox {
+  padding: 1.5rem;
+  border: 2px $grey-bordercolor;
+  // top bottom: solid; right left: none
+  //border has same order as in margin and padding: Top, right, bottom, left
+  border-style: solid none;
 }
-
-
-
+.gridRow {
+  display: grid;
+  grid-template-columns: min-content repeat(4, 1fr);
+  padding: 0.6rem 0;
+  :not(:first-child){
+    margin: auto;
+  }
+}

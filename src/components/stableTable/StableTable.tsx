@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+ faEdit
+} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import Checkbox from "../miniComponents/Checkbox";
 import "./stableTable.scss";
@@ -20,22 +24,24 @@ const StableTable = () => {
     <div className="tableFlex">
       <div className="tableBox">
         <div>Stables</div>
-        <div className="gridRow">
-          <Checkbox />
-          {tableHeading.map((heading) => (
-            <div>{heading.name}</div>
-          ))}
-        </div>
-
-        {tableContent.map((content) => (
+        <div className="innerBox">
           <div className="gridRow">
             <Checkbox />
-            <div>{content.stable}</div>
-            <div>{content.location}</div>
-            <div>{content.group}</div>
-            <div>Edit</div>
+            {tableHeading.map((heading) => (
+              <div>{heading.name}</div>
+            ))}
           </div>
-        ))}
+
+          {tableContent.map((content) => (
+            <div className="gridRow">
+              <Checkbox />
+              <div>{content.stable}</div>
+              <div>{content.location}</div>
+              <div>{content.group}</div>
+              <FontAwesomeIcon icon={faEdit} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
