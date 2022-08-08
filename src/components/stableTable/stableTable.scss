@@ -11,6 +11,11 @@
   margin-top: 2rem;
   padding: 1rem 2.5rem 2.5rem;
 }
+.title {
+  padding: 0 0 0.4rem 0.6rem;
+  color: $body-green;
+  font-weight: 600;
+}
 .innerBox {
   padding: 1.5rem;
   border: 2px $grey-bordercolor;
@@ -21,8 +26,24 @@
 .gridRow {
   display: grid;
   grid-template-columns: min-content repeat(4, 1fr);
-  padding: 0.6rem 0;
-  :not(:first-child){
+  padding: 1rem 0;
+  :not(:first-child) {
     margin: auto;
   }
+  color: $body-green;
+}
+.gridRowWithBorder {
+  @extend .gridRow;
+  :last-child {
+    margin-right: 1.5rem;
+  }
+  color: $black-color;
+  border-bottom: solid $grey-lightBorderColor 1px;
+}
+.gridRowNoBorder {
+  @extend .gridRowWithBorder;
+  border-bottom: none;
+}
+.editIcon {
+  color: $edit-green;
 }
