@@ -30,6 +30,10 @@ code {
   border: solid $grey-bordercolor 1px;
   border-radius: 0.2rem;
 }
+.yellowBullet {
+  @extend .bulletDiv;
+  background-color: $checkbox-yellow;
+}
 //for forms
 .modalContainer {
   display: block;

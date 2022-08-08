@@ -3,10 +3,12 @@ import type { RootState } from "../../app/store";
 
 interface stableState {
   stableFormActive: boolean;
+  selectedStables: any[];
 }
 
 const initialState: stableState = {
   stableFormActive: false,
+  selectedStables: []
 };
 
 export const stableSlice = createSlice({
@@ -16,6 +18,9 @@ export const stableSlice = createSlice({
     toggleStableActive: (state) => {
       state.stableFormActive = !state.stableFormActive;
     },
+    // stableList: (state) => {
+    //   state.selectedStables = 
+    // }
   },
 });
 

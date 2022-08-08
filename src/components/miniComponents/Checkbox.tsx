@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { FC } from "react";
 import "../../styles/_global.scss";
-const Checkbox = () => {
-  return (
-    <div className="bulletDiv"/>
-  )
-}
 
-export default Checkbox
+interface checkboxProps {
+  selected?: any[];
+  id?: number;
+}
+const Checkbox: FC<checkboxProps> = ({ selected, id }) => {
+  return (
+    <div
+      className={
+        selected?.find((item) => item === id) ? "yellowBullet" : "bulletDiv"
+      }
+    />
+  );
+};
+
+export default Checkbox;

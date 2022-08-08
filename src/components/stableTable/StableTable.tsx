@@ -1,22 +1,36 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
+import React, { useState } from "react";
 import Checkbox from "../miniComponents/Checkbox";
 import "./stableTable.scss";
+import { useAppDispatch } from "../../app/hooks";
+import { useAppSelector } from "../../app/hooks";
+import StableTableRow from "./StableTableRow";
 
+export const tableContent = [
+  { id: 1, stable: "Stable1", location: "location1", group: "1" },
+  { id: 2, stable: "Stable2", location: "location2", group: "2" },
+  { id: 3, stable: "Stable3", location: "location3", group: "3" },
+  { id: 4, stable: "Stable4", location: "location4", group: "4" },
+  { id: 5, stable: "Stable5", location: "location5", group: "5" },
+];
 const StableTable = () => {
   const tableHeading = [
     { name: "Stable" },
     { name: "Location" },
     { name: "Groups" },
   ];
-  const tableContent = [
-    { id: 1, stable: "Stable1", location: "location1", group: "1" },
-    { id: 2, stable: "Stable2", location: "location2", group: "2" },
-    { id: 3, stable: "Stable3", location: "location3", group: "3" },
-    { id: 4, stable: "Stable4", location: "location4", group: "4" },
-    { id: 5, stable: "Stable5", location: "location5", group: "5" },
-  ];
+  const dispatch = useAppDispatch();
+  const [selected, setSelected] = useState<any[]>([]);
+  const clickHandler = (id: number) => {
+    // dispatch(stableRowClicked());
+    if (selected?.find((elem) => elem === id)) {
+      let removed = selected.filter((elem) => elem !== id);
+      setSelected(removed);
+    } else {
+      setSelected((prev) => [...prev, id]);
+    }
+  };
 
   return (
     <div className="tableFlex">
@@ -32,18 +46,15 @@ const StableTable = () => {
 
           {tableContent.map((content) => (
             //checking if the last id of the tableContent is same as content id
-            <div
-              className={
-                tableContent[tableContent.length - 1].id === content.id ? "gridRowNoBorder" : "gridRowWithBorder"
-              }
+            <StableTableRow
+              id={content.id}
               key={content.id}
-            >
-              <Checkbox />
-              <div>{content.stable}</div>
-              <div>{content.location}</div>
-              <div>{content.group}</div>
-              <FontAwesomeIcon icon={faEdit} className="editIcon" />
-            </div>
+              stable={content.stable}
+              location={content.location}
+              group={content.group}
+              clickHandler={() => clickHandler(content.id)}
+              selected={selected}
+            />
           ))}
         </div>
       </div>
@@ -52,3 +63,6 @@ const StableTable = () => {
 };
 
 export default StableTable;
+function clickHandler(id: number): void {
+  throw new Error("Function not implemented.");
+}
