@@ -3,14 +3,15 @@ import type { RootState } from "../../app/store";
 
 interface stableState {
   stableFormActive: boolean;
-  selectedStables: any[];
+  selectedIds: string[];
+  id: string;
 }
 
 const initialState: stableState = {
   stableFormActive: false,
-  selectedStables: []
+  selectedIds: [],
+  id: '',
 };
-
 export const stableSlice = createSlice({
   name: "stable",
   initialState,
@@ -18,11 +19,17 @@ export const stableSlice = createSlice({
     toggleStableActive: (state) => {
       state.stableFormActive = !state.stableFormActive;
     },
-    // stableList: (state) => {
-    //   state.selectedStables = 
-    // }
+    addId: (state, action)=> {
+      const id = action.payload
+       state.selectedIds.push(id)
+    },
+    removeId: (state, action) => {
+      const id = action.payload
+     let removed = state.selectedIds.filter(x => x !== id);
+     state.selectedIds = removed;
+    }
   },
 });
 
-export const { toggleStableActive } = stableSlice.actions;
+export const { toggleStableActive, addId, removeId } = stableSlice.actions;
 export default stableSlice.reducer;

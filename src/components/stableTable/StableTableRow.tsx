@@ -6,12 +6,11 @@ import { useAppSelector } from "../../app/hooks";
 import Checkbox from "../miniComponents/Checkbox";
 
 interface tableRowProps {
-  id: number;
+  id: string;
   stable: string;
   location: string;
-  group: string;
+  group: number;
   clickHandler: () => void;
-  selected: any[];
 }
 const StableTableRow: FC<tableRowProps> = ({
   id,
@@ -19,8 +18,8 @@ const StableTableRow: FC<tableRowProps> = ({
   location,
   group,
   clickHandler,
-  selected,
 }) => {
+  const selectedIds = useAppSelector(state => state.stable.selectedIds);
   return (
     <div
       className={
@@ -31,8 +30,7 @@ const StableTableRow: FC<tableRowProps> = ({
       key={id}
       onClick={clickHandler}
     >
-      <Checkbox selected={selected} id={id} />
-
+      <Checkbox selectedIds={selectedIds} id={id} />
       <div>{stable}</div>
       <div>{location}</div>
       <div>{group}</div>

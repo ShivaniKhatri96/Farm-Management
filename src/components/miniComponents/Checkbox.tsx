@@ -2,14 +2,14 @@ import React, { FC } from "react";
 import "../../styles/_global.scss";
 
 interface checkboxProps {
-  selected?: any[];
-  id?: number;
+  selectedIds?: string[];
+  id?: string;
 }
-const Checkbox: FC<checkboxProps> = ({ selected, id }) => {
+const Checkbox: FC<checkboxProps> = ({ selectedIds, id }) => {
   return (
     <div
       className={
-        selected?.find((item) => item === id) ? "yellowBullet" : "bulletDiv"
+        selectedIds?.find((item) => item === id) ? "yellowBullet" : "bulletDiv"
       }
     />
   );
