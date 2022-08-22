@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { useAppSelector } from "../../app/hooks";
 import Checkbox from "../miniComponents/Checkbox";
+import Status from "../miniComponents/Status";
 import { groupTableContent } from "./GroupTable";
 
 interface GroupTableRowProps {
@@ -37,7 +38,7 @@ const GroupTableRow: FC<GroupTableRowProps> = ({
       <div>{totalAnimals}</div>
       <div>{startDate}</div>
       <div>{endDate}</div>
-      <div>{status}</div>
+      <Status status={status} />
     </div>
   );
 };

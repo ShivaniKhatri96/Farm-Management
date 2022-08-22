@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import "../../styles/_global.scss";
+import "./miniStyles.scss";
 
 interface checkboxProps {
   selectedIds?: string[];

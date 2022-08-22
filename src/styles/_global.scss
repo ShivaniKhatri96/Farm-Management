@@ -19,21 +19,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-//checkbox styles
-.bulletDiv {
-  display: flex;
-  align-self: flex-end;
-  width: 1rem;
-  height: 1rem;
-  margin-left: 1rem;
-  margin-right: 1.5rem;
-  border: solid $grey-bordercolor 1px;
-  border-radius: 0.2rem;
-}
-.yellowBullet {
-  @extend .bulletDiv;
-  background-color: $checkbox-yellow;
-}
+
 //for forms
 .modalContainer {
   display: block;
