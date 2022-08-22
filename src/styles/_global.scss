@@ -203,6 +203,9 @@ code {
   @include min-sm-Landscape {
     padding: 0.6rem;
   }
+  @include min-md {
+    padding: 1.5rem;
+  }
 }
 
 .hideMobile {
