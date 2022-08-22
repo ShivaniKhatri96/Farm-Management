@@ -2,7 +2,10 @@
 @import "../../styles/variables";
 
 .gridGroupRow {
-  @include gridTableRow(5);
+  @include gridTableRow(3);
+  @include min-sm {
+    @include gridTableRow(5);
+  }
 }
 .gridGroupRowWithBorder {
   @extend .gridGroupRow;

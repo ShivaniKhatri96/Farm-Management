@@ -55,6 +55,7 @@ const GroupTable = () => {
     "End date",
     "Status",
   ];
+  const mobileGroupHeading = ["Group", "Total animals", "Status"];
   const dispatch = useAppDispatch();
   const selectedGroupIds = useAppSelector((state) => state.group.selectedIds);
   const clickGroupHandler = (id: string) => {
@@ -70,11 +71,21 @@ const GroupTable = () => {
       <div className="tableBox">
         <div className="tableTitle">Groups</div>
         <div className="innerBox">
-          <div className="gridGroupRow">
-            <Checkbox />
-            {groupHeading.map((heading) => (
-              <div key={heading}>{heading}</div>
-            ))}
+          <div className="hideMobile">
+            <div className="gridGroupRow">
+              <Checkbox />
+              {groupHeading.map((heading) => (
+                <div key={heading}>{heading}</div>
+              ))}
+            </div>
+          </div>
+          <div className="showMobile">
+            <div className="gridGroupRow">
+              <Checkbox />
+              {mobileGroupHeading.map((heading) => (
+                <div key={heading}>{heading}</div>
+              ))}
+            </div>
           </div>
 
           {groupTableContent.map((content) => (

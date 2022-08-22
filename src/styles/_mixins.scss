@@ -17,6 +17,13 @@
     margin: auto;
   }
   color: $body-green;
+  font-size: 0.8rem;
+  @include min-sm {
+    font-size: 1rem;
+  }
+  @include min-sm-Landscape {
+    font-size: 0.9rem;
+  }
 }
 //for mobile to desktop
 // for example: $sm (600px) will be included, it's 600px and

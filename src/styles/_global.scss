@@ -175,11 +175,17 @@ code {
 }
 .tableBox {
   @include box;
-  width: 80%;
+  width: 100%;
   margin-top: 2rem;
-  padding: 1rem 2.5rem 2.5rem;
+  padding: 1rem 1rem 2.5rem;
   //padding when pagination is included
   // padding: 1rem 2.5rem 3.5rem;
+  @include min-sm {
+    padding: 1rem 2.5rem 2.5rem;
+  }
+  @include min-md {
+    width: 80%;
+  }
 }
 .tableTitle {
   padding: 0 0 0.4rem 0.6rem;
@@ -187,9 +193,27 @@ code {
   font-weight: 600;
 }
 .innerBox {
-  padding: 1.5rem;
   border: 2px $grey-bordercolor;
   // top bottom: solid; right left: none
   //border has same order as in margin and padding: Top, right, bottom, left
   border-style: solid none;
+  @include min-sm {
+    padding: 1.5rem;
+  }
+  @include min-sm-Landscape {
+    padding: 0.6rem;
+  }
+}
+
+.hideMobile {
+  display: none;
+  @include min-sm {
+    display: block;
+  }
+}
+.showMobile {
+  display: block;
+  @include min-sm {
+    display: none;
+  }
 }

@@ -36,8 +36,8 @@ const GroupTableRow: FC<GroupTableRowProps> = ({
       <Checkbox selectedIds={selectedGroupIds} id={id} />
       <div>{group}</div>
       <div>{totalAnimals}</div>
-      <div>{startDate}</div>
-      <div>{endDate}</div>
+      <div className="hideMobile">{startDate}</div>
+      <div className="hideMobile">{endDate}</div>
       <Status status={status} />
     </div>
   );

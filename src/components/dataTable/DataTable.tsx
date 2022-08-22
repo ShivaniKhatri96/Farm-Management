@@ -53,6 +53,7 @@ const DataTable = () => {
     "Water intake(l)",
     "Temperature(°C)",
   ];
+  const mobileDataHeading = ["Date", "Feed(kg)", "Water(L)", "Temp(°C)"];
   const dispatch = useAppDispatch();
   const selectedDataIds = useAppSelector((state) => state.data.selectedIds);
   const clickDataHandler = (id: string) => {
@@ -67,11 +68,21 @@ const DataTable = () => {
       <div className="tableBox">
         <div className="tableTitle">Data</div>
         <div className="innerBox">
-          <div className="gridDataRow">
-            <Checkbox />
-            {dataHeading.map((heading) => (
-              <div key={heading}>{heading}</div>
-            ))}
+          <div className="hideMobile">
+            <div className="gridDataRow">
+              <Checkbox />
+              {dataHeading.map((heading) => (
+                <div key={heading}>{heading}</div>
+              ))}
+            </div>
+          </div>
+          <div className="showMobile">
+            <div className="gridDataRow">
+              <Checkbox />
+              {mobileDataHeading.map((heading) => (
+                <div key={heading}>{heading}</div>
+              ))}
+            </div>
           </div>
 
           {dataContent.map((content) => (
