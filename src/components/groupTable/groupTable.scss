@@ -1,45 +1,16 @@
 @import "../../styles/mixins";
 @import "../../styles/variables";
 
-.tableFlex {
-  display: flex;
-  justify-content: center;
-}
-.table_Box {
-  @include box;
-  width: 80%;
-  margin-top: 2rem;
-  padding: 1rem 2.5rem 2.5rem;
-  //padding when pagination is included
-  // padding: 1rem 2.5rem 3.5rem;
-}
-.tableTitle {
-  padding: 0 0 0.4rem 0.6rem;
-  color: $body-green;
-  font-weight: 600;
-}
-.innerBox {
-  padding: 1.5rem;
-  border: 2px $grey-bordercolor;
-  // top bottom: solid; right left: none
-  //border has same order as in margin and padding: Top, right, bottom, left
-  border-style: solid none;
-}
+
 .gridGroupRow {
-  display: grid;
-  grid-template-columns: min-content repeat(5, 1fr);
-  padding: 1rem 0;
-  :not(:first-child) {
-    margin: auto;
-  }
-  color: $body-green;
+  @include gridTableRow(5);
 }
-.gridRowWithBorder {
+.gridGroupRowWithBorder {
   @extend .gridGroupRow;
   color: $black-color;
   border-bottom: solid $grey-lightBorderColor 1px;
 }
-.gridRowNoBorder {
-  @extend .gridRowWithBorder;
+.gridGroupRowNoBorder {
+  @extend .gridGroupRowWithBorder;
   border-bottom: none;
 }

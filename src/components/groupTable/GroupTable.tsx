@@ -1,6 +1,8 @@
-import React from "react";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { addGroupId, removeGroupId } from "../../pages/groups/groupSlice";
 import Checkbox from "../miniComponents/Checkbox";
 import "./groupTable.scss";
+import GroupTableRow from "./GroupTableRow";
 //temp data
 //date format will be different with real data
 export const groupTableContent = [
@@ -53,9 +55,19 @@ const GroupTable = () => {
     "End date",
     "Status",
   ];
+  const dispatch = useAppDispatch();
+  const selectedGroupIds = useAppSelector((state) => state.group.selectedIds);
+  const clickGroupHandler = (id: string) => {
+    if (selectedGroupIds?.find((elem) => elem === id)) {
+      dispatch(removeGroupId(id));
+    } else {
+      dispatch(addGroupId(id));
+    }
+  };
+  // console.log(selectedGroupIds);
   return (
     <div className="tableFlex">
-      <div className="table_Box">
+      <div className="tableBox">
         <div className="tableTitle">Groups</div>
         <div className="innerBox">
           <div className="gridGroupRow">
@@ -65,17 +77,18 @@ const GroupTable = () => {
             ))}
           </div>
 
-          {/* {tableContent.map((content) => (
-        //checking if the last id of the tableContent is same as content id
-        <StableTableRow
-          id={content.id}
-          key={content.id}
-          stable={content.stable}
-          location={content.location}
-          group={content.group}
-          clickHandler={() => clickHandler(content.id)}
-        />
-      ))} */}
+          {groupTableContent.map((content) => (
+            <GroupTableRow
+              id={content.id}
+              key={content.id}
+              group={content.group_name}
+              totalAnimals={content.number_of_animal}
+              startDate={content.start_date}
+              endDate={content.end_date}
+              status={content.status}
+              clickGroupHandler={() => clickGroupHandler(content.id)}
+            />
+          ))}
         </div>
       </div>
     </div>

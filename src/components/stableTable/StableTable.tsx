@@ -1,6 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
 import Checkbox from "../miniComponents/Checkbox";
 import "./stableTable.scss";
 import { useAppDispatch } from "../../app/hooks";
@@ -57,6 +54,4 @@ const StableTable = () => {
 };
 
 export default StableTable;
-function clickHandler(id: number): void {
-  throw new Error("Function not implemented.");
-}
+
