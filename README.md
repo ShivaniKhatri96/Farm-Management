@@ -36,6 +36,7 @@
 - Welcome page layout
 - Login page (via Keycloak.js)
 - Forms layout for Stable, Group and Data pages created
+- Table layout for stable, group and data pages
 
 # Responsive layout
 
@@ -49,11 +50,10 @@
 
 ## Currently working on
 
-- Table layout for stable, group and data pages
+- internationalization
 
 ## Next
 
-- internationalization
 - Adding functionalities to forms including validations, connecting to backend and testing
 
 ## Links
