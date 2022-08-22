@@ -4,6 +4,7 @@ import Sidebar from "../sidebar/Sidebar";
 import "../layoutPage/layoutPage.scss";
 import { faGear, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
+//array of objects for header menu
 export const headerMenu = [
   { name: "Settings", route: "/settings", icon: faGear },
   { name: "Logout", route: "/", icon: faRightFromBracket },

@@ -1,0 +1,18 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.gridGroupRow {
+  @include gridTableRow(3);
+  @include min-sm {
+    @include gridTableRow(5);
+  }
+}
+.gridGroupRowWithBorder {
+  @extend .gridGroupRow;
+  color: $black-color;
+  border-bottom: solid $grey-lightBorderColor 1px;
+}
+.gridGroupRowNoBorder {
+  @extend .gridGroupRowWithBorder;
+  border-bottom: none;
+}

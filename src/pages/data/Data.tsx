@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import CreateBox from "../../components/createBox/CreateBox";
 import DataForm from "../../components/dataForm/DataForm";
+import DataTable from "../../components/dataTable/DataTable";
 import Layout from "../../components/layout/layoutPage/Layout";
 import { toggleDataActive } from "./dataSlice";
 
@@ -24,6 +24,7 @@ const Data = () => {
         to={"group"}
         handleClick={handleData}
       />
+      <DataTable />
     </Layout>
   );
 };

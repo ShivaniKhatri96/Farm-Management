@@ -4,6 +4,7 @@ import Layout from "../../components/layout/layoutPage/Layout";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { toggleStableActive } from "./stableSlice";
 import StableForm from "../../components/stableForm/StableForm";
+import StableTable from "../../components/stableTable/StableTable";
 const Stables = () => {
   const dispatch = useAppDispatch();
   const stableActive = useAppSelector((state) => state.stable.stableFormActive);
@@ -22,6 +23,7 @@ const Stables = () => {
         to={"farm"}
         handleClick={handleStable}
       />
+      <StableTable />
     </Layout>
   );
 };

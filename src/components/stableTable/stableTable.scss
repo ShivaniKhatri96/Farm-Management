@@ -1,0 +1,21 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.gridRow {
+  @include gridTableRow(4);
+}
+.gridRowWithBorder {
+  @extend .gridRow;
+  :last-child {
+    margin-right: 1.5rem;
+  }
+  color: $black-color;
+  border-bottom: solid $grey-lightBorderColor 1px;
+}
+.gridRowNoBorder {
+  @extend .gridRowWithBorder;
+  border-bottom: none;
+}
+.editIcon {
+  color: $edit-green;
+}
