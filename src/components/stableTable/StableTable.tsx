@@ -7,7 +7,7 @@ import { useAppDispatch } from "../../app/hooks";
 import { useAppSelector } from "../../app/hooks";
 import StableTableRow from "./StableTableRow";
 import { addId, removeId } from "../../pages/stables/stableSlice";
-
+//temp data
 export const tableContent = [
   { id: "1", stable: "Stable1", location: "location1", group: 1 },
   { id: "2", stable: "Stable2", location: "location2", group: 2 },
@@ -16,31 +16,26 @@ export const tableContent = [
   { id: "5", stable: "Stable5", location: "location5", group: 5 },
 ];
 const StableTable = () => {
-  const tableHeading = [
-    { name: "Stable" },
-    { name: "Location" },
-    { name: "Groups" },
-  ];
+  const tableHeading = ["Stable", "Location", "Groups"];
   const dispatch = useAppDispatch();
-  const selectedIds = useAppSelector(state => state.stable.selectedIds);
+  const selectedIds = useAppSelector((state) => state.stable.selectedIds);
   const clickHandler = (id: string) => {
     if (selectedIds?.find((elem) => elem === id)) {
-     dispatch(removeId(id))
+      dispatch(removeId(id));
     } else {
-      dispatch(addId(id))
+      dispatch(addId(id));
     }
-   
   };
   // console.log(selectedIds);
   return (
     <div className="tableFlex">
       <div className="tableBox">
-        <div className="title">Stables</div>
+        <div className="tableTitle">Stables</div>
         <div className="innerBox">
           <div className="gridRow">
             <Checkbox />
             {tableHeading.map((heading) => (
-              <div key={heading.name}>{heading.name}</div>
+              <div key={heading}>{heading}</div>
             ))}
           </div>
 

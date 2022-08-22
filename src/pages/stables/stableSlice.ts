@@ -20,6 +20,8 @@ export const stableSlice = createSlice({
       state.stableFormActive = !state.stableFormActive;
     },
     addId: (state, action)=> {
+      //payload is sent while dispatching
+      // const id is just a variable that stores the payload
       const id = action.payload
        state.selectedIds.push(id)
     },
