@@ -24,6 +24,9 @@
   @include min-sm-Landscape {
     font-size: 0.9rem;
   }
+  @include min-md {
+    font-size: 1rem;
+  }
 }
 //for mobile to desktop
 // for example: $sm (600px) will be included, it's 600px and
