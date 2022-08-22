@@ -1,4 +1,9 @@
 import React from "react";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { addDataId, removeDataId } from "../../pages/data/dataSlice";
+import Checkbox from "../miniComponents/Checkbox";
+import "./dataTable.scss";
+import DataTableRow from "./DataTableRow";
 export const dataContent = [
   {
     data_date: "2022-06-02",
@@ -42,8 +47,48 @@ export const dataContent = [
   },
 ];
 const DataTable = () => {
-    const dataHeading = ["Date", "Feed intake", "Water intake", "Temperature"]
-  return <div>DataTable</div>;
+  const dataHeading = [
+    "Date",
+    "Feed intake(kg)",
+    "Water intake(l)",
+    "Temperature(°C)",
+  ];
+  const dispatch = useAppDispatch();
+  const selectedDataIds = useAppSelector((state) => state.data.selectedIds);
+  const clickDataHandler = (id: string) => {
+    if (selectedDataIds?.find((elem) => elem === id)) {
+      dispatch(removeDataId(id));
+    } else {
+      dispatch(addDataId(id));
+    }
+  };
+  return (
+    <div className="tableFlex">
+      <div className="tableBox">
+        <div className="tableTitle">Data</div>
+        <div className="innerBox">
+          <div className="gridDataRow">
+            <Checkbox />
+            {dataHeading.map((heading) => (
+              <div key={heading}>{heading}</div>
+            ))}
+          </div>
+
+          {dataContent.map((content) => (
+            <DataTableRow
+              id={content.id}
+              key={content.id}
+              date={content.data_date}
+              feed={content.feed}
+              temp={content.temperature}
+              water={content.water}
+              clickDataHandler={() => clickDataHandler(content.id)}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default DataTable;

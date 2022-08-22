@@ -1,15 +1,15 @@
 @import "../../styles/mixins";
 @import "../../styles/variables";
 
-.gridGroupRow {
-  @include gridTableRow(5);
+.gridDataRow {
+  @include gridTableRow(4);
 }
-.gridGroupRowWithBorder {
-  @extend .gridGroupRow;
+.gridDataRowWithBorder {
+  @extend .gridDataRow;
   color: $black-color;
   border-bottom: solid $grey-lightBorderColor 1px;
 }
-.gridGroupRowNoBorder {
-  @extend .gridGroupRowWithBorder;
+.gridDataRowNoBorder {
+  @extend .gridDataRowWithBorder;
   border-bottom: none;
 }
