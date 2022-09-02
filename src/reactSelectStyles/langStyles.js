@@ -10,7 +10,7 @@ export const colorLangStyles = {
     option: (styles, { isSelected }) => {
       return {
         ...styles,
-        fontSize: "0.9rem",
+        fontSize: "0.8rem",
         "&:hover": {
           backgroundColor: isSelected ? "#36443C" : "#eaf5f2",
         },
