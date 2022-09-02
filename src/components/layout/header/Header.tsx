@@ -11,13 +11,19 @@ import { toggleActive, toggleHamburger } from "./headerSlice";
 import { useRef } from "react";
 import { headerMenu } from "../layoutPage/Layout";
 import UserService from "../../../services/UserService";
+import Select from "react-select";
+import { colorLangStyles } from "../../../reactSelectStyles/langStyles";
 
 const Header = () => {
   const node = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const active = useAppSelector((state) => state.header.active);
   const hamburgerOn = useAppSelector((state) => state.header.hamburgerOn);
-
+  const options = [
+    { value: "english", label: "English" },
+    { value: "Dutch", label: "Dutch" },
+  ];
+  const defaultOption = [{ value: "english", label: "English" }];
   const handleHamburger = () => {
     dispatch(toggleHamburger());
   };
@@ -57,47 +63,58 @@ const Header = () => {
         />
       </Link>
       {/*based on whether the user is logged in or not*/}
-      {!UserService.isLoggedIn() ? (
-        <div className="login" onClick={() => UserService.doLogin()}>
-          <FontAwesomeIcon icon={faArrowRightToBracket} /> LogIn
-        </div>
-      ) : (
-        <div>
-          {/* below large screens */}
-          <div
-            className={hamburgerOn ? "hamburgerOn" : "hamburger"}
-            onClick={handleHamburger}
-          />
-          {/* this will be shown only from large screens */}
-          <div className="client-area">
-            <div className="client-name">Shivani</div>
-            <div ref={node}>
-              <div onClick={handleClient}>
-                <FontAwesomeIcon icon={faCircleUser} className="circle" />
-              </div>
-              {/* dropdown items */}
-              {active && (
-                <div className="dropdown-client">
-                  {headerMenu.map((menu) => (
-                    <Link
-                      key={menu.name}
-                      className="dropdown-content"
-                      to={menu.route}
-                      onClick={() => {
-                        handleDropdown(menu.name);
-                        handleClient();
-                      }}
-                    >
-                      <FontAwesomeIcon icon={menu.icon} className="icon-gap" />
-                      {menu.name}
-                    </Link>
-                  ))}
+      <div className="client-grid">
+        <Select
+          options={options}
+          styles={colorLangStyles}
+          defaultValue={defaultOption[0]}
+          components={{ DropdownIndicator: () => null }}
+        />
+        {!UserService.isLoggedIn() ? (
+          <div className="login" onClick={() => UserService.doLogin()}>
+            <FontAwesomeIcon icon={faArrowRightToBracket} /> LogIn
+          </div>
+        ) : (
+          <div>
+            {/* below large screens */}
+            <div
+              className={hamburgerOn ? "hamburgerOn" : "hamburger"}
+              onClick={handleHamburger}
+            />
+            {/* this will be shown only from large screens */}
+            <div className="client-area">
+              <div className="client-name">Shivani</div>
+              <div ref={node}>
+                <div onClick={handleClient}>
+                  <FontAwesomeIcon icon={faCircleUser} className="circle" />
                 </div>
-              )}
+                {/* dropdown items */}
+                {active && (
+                  <div className="dropdown-client">
+                    {headerMenu.map((menu) => (
+                      <Link
+                        key={menu.name}
+                        className="dropdown-content"
+                        to={menu.route}
+                        onClick={() => {
+                          handleDropdown(menu.name);
+                          handleClient();
+                        }}
+                      >
+                        <FontAwesomeIcon
+                          icon={menu.icon}
+                          className="icon-gap"
+                        />
+                        {menu.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
