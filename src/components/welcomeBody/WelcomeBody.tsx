@@ -2,7 +2,9 @@ import React from "react";
 import "./welcomeBody.scss";
 import landscapeImg from "../../images/sheepsLandscapev3.jpg";
 import portraitImg from "../../images/sheeps.jpg";
+import { useTranslation } from "react-i18next";
 const WelcomeBody = () => {
+  const { t } = useTranslation(["welcome"]);
   return (
     <div>
       <img
@@ -16,7 +18,8 @@ const WelcomeBody = () => {
         className="portraitImg"
       />
       <div className="blackBox">
-        <div className="welcomeText">Welcome to the farm world</div>
+        <div className="welcomeText">{t("welcome")} </div>
+        {/* to the farm world */}
         <div className="bodyText">
           <div className="secondText">
             Join our platform to make your farming journey enjoyable

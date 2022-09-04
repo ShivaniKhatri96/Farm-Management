@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../header/headerContainer.scss";
 import {
   faCircleUser,
@@ -7,23 +7,32 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../../app/hooks";
-import { toggleActive, toggleHamburger } from "./headerSlice";
+import { currentLang, toggleActive, toggleHamburger } from "./headerSlice";
 import { useRef } from "react";
 import { headerMenu } from "../layoutPage/Layout";
 import UserService from "../../../services/UserService";
 import Select from "react-select";
 import { colorLangStyles } from "../../../reactSelectStyles/langStyles";
+import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { i18n, t } = useTranslation(["common", "welcome"]);
   const node = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const active = useAppSelector((state) => state.header.active);
   const hamburgerOn = useAppSelector((state) => state.header.hamburgerOn);
+  const selectedLang = useAppSelector((state) => state.header.selectedLang);
+  const [selected, setSelected] = useState<string>("");
+  const lngs = {
+    en: { nativeName: "English" },
+    nl: { nativeName: "Dutch" },
+  };
   const options = [
-    { value: "english", label: "English" },
-    { value: "Dutch", label: "Dutch" },
+    { value: "en", label: "English" },
+    { value: "nl", label: "Dutch" },
   ];
-  const defaultOption = [{ value: "english", label: "English" }];
+  const defaultOption = [{ value: "eng", label: "English" }];
   const handleHamburger = () => {
     dispatch(toggleHamburger());
   };
@@ -51,6 +60,15 @@ const Header = () => {
     };
   }, [active]);
   //// Only re-runs the effect if active changes
+  const handleLanguageChange = (selectedOption: any) => {
+    setSelected(selectedOption.value);
+    dispatch(currentLang(selectedOption.value));
+  };
+  console.log(selected);
+  console.log(currentLang);
+  useEffect(() => {
+    i18n.changeLanguage(selected);
+  }, [selected]);
 
   return (
     <div className="header-box">
@@ -69,6 +87,7 @@ const Header = () => {
           styles={colorLangStyles}
           defaultValue={defaultOption[0]}
           components={{ DropdownIndicator: () => null }}
+          onChange={handleLanguageChange}
         />
         {!UserService.isLoggedIn() ? (
           <div className="login" onClick={() => UserService.doLogin()}>
