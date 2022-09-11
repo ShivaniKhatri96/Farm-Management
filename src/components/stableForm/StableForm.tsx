@@ -14,7 +14,7 @@ const StableForm = () => {
     }
   };
   return (
-    <div className={formActive ? "modalContainer" : "modalClose"}>
+    <div className={formActive ? "modalVisible" : "modalContainer"}>
       <div className="form">
         <div className="closeButton">
           <FontAwesomeIcon icon={faWindowClose} onClick={handleClose} />

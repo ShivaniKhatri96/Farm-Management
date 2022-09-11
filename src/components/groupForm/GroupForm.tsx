@@ -31,7 +31,7 @@ const GroupForm = () => {
   const [endDate, setEndDate] = useState<Date | null>(null);
 
   return (
-    <div className={groupFormActive ? "modalContainer" : "modalClose"}>
+    <div className={groupFormActive ? "modalVisible" : "modalContainer"}>
       <div className="form">
         <div className="closeButton">
           <FontAwesomeIcon icon={faWindowClose} onClick={handleGroupClose} />

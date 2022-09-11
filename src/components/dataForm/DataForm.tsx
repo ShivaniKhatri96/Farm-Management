@@ -27,7 +27,7 @@ const DataForm = () => {
     { value: "vanilla", label: "Vanilla" },
   ];
   return (
-    <div className={dataFormActive ? "modalContainer" : "modalClose"}>
+    <div className={dataFormActive ? "modalVisible" : "modalContainer"}>
       <div className="form">
         <div className="closeButton">
           <FontAwesomeIcon icon={faWindowClose} onClick={handledataClose} />
