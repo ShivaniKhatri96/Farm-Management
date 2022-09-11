@@ -66,7 +66,7 @@
 - Pictures from [pexels.com](https://www.pexels.com/)
 - `keycloak integration with react` tutorial followed from [dasniko](https://github.com/dasniko/keycloak-reactjs-demo/)
 - learned to add `animation to modals` from [animating modal views](https://web.dev/animating-modal-views/)
-- internationalization added to the project by using tutorial from [Go international with your next app](https://www.youtube.com/watch?v=baLjPx_wFi4&list=LL&index=2&t=1265s&ab_channel=YouSuckAtCoding)
+- `internationalization` added to the project by using tutorial from [go international with your next app](https://www.youtube.com/watch?v=baLjPx_wFi4&list=LL&index=2&t=1265s&ab_channel=YouSuckAtCoding)
 
 ## More About this Project
 
