@@ -1,4 +1,10 @@
 {
     "submit": "Verzend",
-    "login": "Login"
+    "login": "Login",
+    "settings": "Instellingen",
+    "logout": "Uitloggen",
+    "overview":"Overzicht",
+    "stableManagement": "Stalbeheer",
+    "groupManagement": "Groepsbeheer",
+    "data": "Gegevens"
 }

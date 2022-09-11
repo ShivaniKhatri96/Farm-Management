@@ -1,4 +1,10 @@
 {
     "submit": "Submit",
-    "login": "LogIn"
+    "login": "LogIn",
+    "settings": "Settings",
+    "logout": "Logout",
+    "overview":"Overview",
+    "stableManagement": "Stable Management",
+    "groupManagement": "Group Management",
+    "data": "Data"
 }

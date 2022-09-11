@@ -7,32 +7,27 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../../app/hooks";
-import { currentLang, toggleActive, toggleHamburger } from "./headerSlice";
+import { toggleActive, toggleHamburger } from "./headerSlice";
 import { useRef } from "react";
 import { headerMenu } from "../layoutPage/Layout";
 import UserService from "../../../services/UserService";
 import Select from "react-select";
 import { colorLangStyles } from "../../../reactSelectStyles/langStyles";
-import i18next from "i18next";
+import i18next, { changeLanguage } from "i18next";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
-  const { i18n, t } = useTranslation(["common", "welcome"]);
+  const { i18n, t } = useTranslation(["common"]);
   const node = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const active = useAppSelector((state) => state.header.active);
   const hamburgerOn = useAppSelector((state) => state.header.hamburgerOn);
-  const selectedLang = useAppSelector((state) => state.header.selectedLang);
   const [selected, setSelected] = useState<string>("");
-  const lngs = {
-    en: { nativeName: "English" },
-    nl: { nativeName: "Dutch" },
-  };
   const options = [
-    { value: "en", label: "English" },
-    { value: "nl", label: "Dutch" },
+    { value: "en", label: "EN" },
+    { value: "nl", label: "NL" },
   ];
-  const defaultOption = [{ value: "eng", label: "English" }];
+  const defaultOption = [{ value: "en", label: "EN" }];
   const handleHamburger = () => {
     dispatch(toggleHamburger());
   };
@@ -41,7 +36,7 @@ const Header = () => {
     dispatch(toggleActive());
   };
   const handleDropdown = (name: string) => {
-    if (name === "Logout") {
+    if (name === "logout") {
       UserService.doLogout();
     }
   };
@@ -62,10 +57,10 @@ const Header = () => {
   //// Only re-runs the effect if active changes
   const handleLanguageChange = (selectedOption: any) => {
     setSelected(selectedOption.value);
-    dispatch(currentLang(selectedOption.value));
   };
-  console.log(selected);
-  console.log(currentLang);
+  useEffect(() => {
+    i18n.changeLanguage("en");
+  }, []);
   useEffect(() => {
     i18n.changeLanguage(selected);
   }, [selected]);
@@ -91,7 +86,7 @@ const Header = () => {
         />
         {!UserService.isLoggedIn() ? (
           <div className="login" onClick={() => UserService.doLogin()}>
-            <FontAwesomeIcon icon={faArrowRightToBracket} /> LogIn
+            <FontAwesomeIcon icon={faArrowRightToBracket} /> {t('login')}
           </div>
         ) : (
           <div>
@@ -124,7 +119,7 @@ const Header = () => {
                           icon={menu.icon}
                           className="icon-gap"
                         />
-                        {menu.name}
+                        {t(menu.name)}
                       </Link>
                     ))}
                   </div>

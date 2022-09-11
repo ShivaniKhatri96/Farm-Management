@@ -5,14 +5,12 @@ import type { RootState } from "../../../app/store";
 interface headerState {
   active: boolean;
   hamburgerOn: boolean;
-  selectedLang: string;
 }
 
 // Defining the initial state using that type
 const initialState: headerState = {
   active: false,
   hamburgerOn: false,
-  selectedLang: "",
 };
 
 export const headerSlice = createSlice({
@@ -25,11 +23,8 @@ export const headerSlice = createSlice({
     toggleHamburger: (state) => {
       state.hamburgerOn = !state.hamburgerOn;
     },
-    currentLang: (state, action) => {
-      state.selectedLang = action.payload;
-    }
   },
 });
 
-export const { toggleActive, toggleHamburger, currentLang } = headerSlice.actions;
+export const { toggleActive, toggleHamburger } = headerSlice.actions;
 export default headerSlice.reducer;
