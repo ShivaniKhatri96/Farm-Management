@@ -12,19 +12,23 @@
 
 ## Tools
 
-- React
-- TypeScript
-- Sass
-- Redux (for State management)
-- Font Awesome (for icons)
-- Chart.js (will be included later for graphs)
-- React Testing Library (will be later used for testing with Jest)
-- Cypress (will be later used for End to End testing)
-- Figma (for designing the website)
-- React Hook Form (will be later used for react form validations)
-- Keycloak (for identity and access management)
-- react-select (for selection)
-- react-datepicker (for selecting a date)
+### in use
+- `React`
+- `TypeScript`
+- `Sass`
+- `Redux` for State management
+- `Font Awesome` for icons
+- `Figma` for designing the website
+- `Keycloak` for identity and access management
+- `react-select` for selection
+- `react-datepicker` for selecting a date
+- `react-i18next` for internationalization
+
+### will be later included
+- `Chart.js` for graphs
+- `React Testing Library` for testing with Jest
+- `Cypress` for End to End testing
+- `React Hook Form` will be later used for react form validations
 
 ## Completed
 
@@ -50,7 +54,7 @@
 
 ## Currently working on
 
-- internationalization
+- internationalization with react-i18next
 
 ## Next
 
@@ -60,10 +64,9 @@
 
 - Logo from [Adobe logo-maker](https://express.adobe.com/express-apps/logo-maker/)
 - Pictures from [pexels.com](https://www.pexels.com/)
-- keycloak integration with react tutorial followed from [dasniko](https://github.com/dasniko/keycloak-reactjs-demo/)
-
-## Notes
-> After taking a break from this project, I am back! I will continue to post the updates.
+- `keycloak integration with react` tutorial followed from [dasniko](https://github.com/dasniko/keycloak-reactjs-demo/)
+- learned to add `animation to modals` from [animating modal views](https://web.dev/animating-modal-views/)
+- internationalization added to the project by using tutorial from [Go international with your next app](https://www.youtube.com/watch?v=baLjPx_wFi4&list=LL&index=2&t=1265s&ab_channel=YouSuckAtCoding)
 
 ## More About this Project
 
