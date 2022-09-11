@@ -13,6 +13,7 @@
 ## Tools
 
 ### in use
+
 - `React`
 - `TypeScript`
 - `Sass`
@@ -25,6 +26,7 @@
 - `react-i18next` for internationalization
 
 ### will be later included
+
 - `Chart.js` for graphs
 - `React Testing Library` for testing with Jest
 - `Cypress` for End to End testing
