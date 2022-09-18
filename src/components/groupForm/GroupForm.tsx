@@ -12,7 +12,7 @@ import { toggleGroupActive } from "../../pages/groups/groupSlice";
 import { useTranslation } from "react-i18next";
 
 const GroupForm = () => {
-  const { t } = useTranslation(["stable", "group"]);
+  const { t } = useTranslation(["common", "group"]);
   const dispatch = useAppDispatch();
   const groupFormActive = useAppSelector(
     (state) => state.group.groupFormActive

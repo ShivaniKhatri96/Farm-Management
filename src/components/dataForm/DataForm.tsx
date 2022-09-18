@@ -9,7 +9,10 @@ import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { toggleDataActive } from "../../pages/data/dataSlice";
+import { useTranslation } from "react-i18next";
+
 const DataForm = () => {
+  const { t } = useTranslation(["common", "data"]);
   const dispatch = useAppDispatch();
   const dataFormActive = useAppSelector((state) => state.data.dataFormActive);
   const handledataClose = () => {
@@ -34,14 +37,12 @@ const DataForm = () => {
         </div>
         <div className="formBody">
           <div>
-            <div className="formTitle">Create Data</div>
-            <div className="formTitleSecond">
-              Fill this form to create a Data
-            </div>
+            <div className="formTitle">{t("data:createData")}</div>
+            <div className="formTitleSecond">{t("data:fillDataForm")}</div>
           </div>
           <div className="formInputs">
             <div>
-              <label className="formLabel">Date</label>
+              <label className="formLabel">{t("data:date")}</label>
               <ReactDatePicker
                 selected={date}
                 onChange={(date: Date) => setDate(date)}
@@ -52,30 +53,43 @@ const DataForm = () => {
             </div>
             <div className="gridForm">
               <div>
-                <label className="formLabel">Select stable</label>
+                <label className="formLabel">{t("data:selectStable")}</label>
                 <Select options={options} styles={colorStyles} />
               </div>
               <div>
-                <label className="formLabel">Select group</label>
+                <label className="formLabel">{t("data:selectGroup")}</label>
                 <Select options={options} styles={colorStyles} />
               </div>
             </div>
             <div>
-              <label className="formLabel">Feed intake(kg)</label>
-              <input className="formInput" placeholder="Enter feed intake" />
+              <label className="formLabel">{t("data:feedIntake")}</label>
+              <input
+                className="formInput"
+                placeholder={t("data:enterFeedIntake")}
+              />
             </div>
             <div className="gridForm">
               <div>
-                <label className="formLabel">Water intake(l)</label>
-                <input className="formInput" placeholder="Enter water intake" />
+                <label className="formLabel">{t("data:waterIntake")}</label>
+                <input
+                  className="formInput"
+                  placeholder={t("data:enterWaterIntake")}
+                />
               </div>
               <div>
-                <label className="formLabel">Temperature(°C)</label>
-                <input className="formInput" placeholder="Enter temperature" />
+                <label className="formLabel">{t("data:temperature")}</label>
+                <input
+                  className="formInput"
+                  placeholder={t("data:enterTemperature")}
+                />
               </div>
             </div>
           </div>
-          <input type="submit" className="formSubmit" />
+          <input
+            type="submit"
+            className="formSubmit"
+            value={t("common:submit")}
+          />
         </div>
       </div>
     </div>
