@@ -56,7 +56,7 @@
   > ![tablet version](/public/assets/sidebarTablet.jpg) > ![mobile version](/public/assets/sidebarMobile.jpg) ![mobile version](/public/assets/sidebarMobileOff.jpg)
 
 ## Currently working on
-
+- Stable page
 - Adding functionalities to forms including validations, connecting to backend and testing
 
 ## Next
