@@ -4,8 +4,10 @@ import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { toggleStableActive } from "../../pages/stables/stableSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 const StableForm = () => {
+  const { t } = useTranslation(["stable", "common"]);
   const dispatch = useAppDispatch();
   const formActive = useAppSelector((state) => state.stable.stableFormActive);
   const handleClose = () => {
@@ -21,22 +23,22 @@ const StableForm = () => {
         </div>
         <div className="formBody">
           <div>
-            <div className="formTitle">Create Stable</div>
+            <div className="formTitle">{t("stable:createStable")}</div>
             <div className="formTitleSecond">
-              Fill this form to create a Stable
+              {t("stable:fillStableForm")}
             </div>
           </div>
           <div className="formInputs">
             <div>
-              <label className="formLabel">Stable name</label>
-              <input className="formInput" placeholder="Enter a name" />
+              <label className="formLabel">{t("stable:stableName")}</label>
+              <input className="formInput" placeholder={t("stable:enterName")} />
             </div>
             <div>
-              <label className="formLabel">Location</label>
-              <input className="formInput" placeholder="Enter a location" />
+              <label className="formLabel">{t("stable:location")}</label>
+              <input className="formInput" placeholder={t("stable:enterLocation")} />
             </div>
           </div>
-          <input type="submit" className="formSubmit" />
+          <input type="submit" className="formSubmit" value={t("common:submit")} />
         </div>
       </div>
     </div>

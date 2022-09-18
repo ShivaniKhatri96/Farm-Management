@@ -2,6 +2,11 @@
    "farm": "farm",
    "stable": "stable",
    "stables": "Stables",
-   "location": "location",
-   "groups": "groups"
+   "location": "Location",
+   "groups": "groups",
+   "createStable":"Create Stable",
+   "fillStableForm": "Fill this form to create a Stable",
+   "stableName": "Stable name",
+   "enterName": "Enter a name",
+   "enterLocation":"Enter a location"
 }
