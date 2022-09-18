@@ -5,8 +5,11 @@ import DataForm from "../../components/dataForm/DataForm";
 import DataTable from "../../components/dataTable/DataTable";
 import Layout from "../../components/layout/layoutPage/Layout";
 import { toggleDataActive } from "./dataSlice";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 const Data = () => {
+  const { i18n, t } = useTranslation(["common"]);
   const dispatch = useAppDispatch();
   const dataActive = useAppSelector((state) => state.data.dataFormActive);
   const handleData = () => {
@@ -19,9 +22,9 @@ const Data = () => {
     <Layout>
       <DataForm />
       <CreateBox
-        page={"Data"}
-        add={"data"}
-        to={"group"}
+        page={t("data")}
+        add={t("dataInfo")}
+        to={t("group")}
         handleClick={handleData}
       />
       <DataTable />

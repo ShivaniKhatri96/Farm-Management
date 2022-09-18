@@ -1,0 +1,10 @@
+{
+    "data": "Gegevens",
+    "date": "datum",
+    "feedIntake":"voedsel inname(kg)",
+    "waterIntake":"water inname(l)",
+    "temperature":"temperatuur(°C)",
+    "feed": "voedsel(kg)", 
+    "water": "water(L)", 
+    "temp": "temp(°C)"
+}

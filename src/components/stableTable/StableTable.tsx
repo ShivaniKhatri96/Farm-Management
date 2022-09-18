@@ -4,6 +4,7 @@ import { useAppDispatch } from "../../app/hooks";
 import { useAppSelector } from "../../app/hooks";
 import StableTableRow from "./StableTableRow";
 import { addId, removeId } from "../../pages/stables/stableSlice";
+import { useTranslation } from "react-i18next";
 //temp data
 export const tableContent = [
   { id: "1", stable: "Stable1", location: "location1", group: 1 },
@@ -13,7 +14,8 @@ export const tableContent = [
   { id: "5", stable: "Stable5", location: "location5", group: 5 },
 ];
 const StableTable = () => {
-  const tableHeading = ["Stable", "Location", "Groups"];
+  const { t } = useTranslation(["common", "stable"]);
+  const tableHeading = ["stable", "location", "groups"];
   const dispatch = useAppDispatch();
   const selectedIds = useAppSelector((state) => state.stable.selectedIds);
   const clickHandler = (id: string) => {
@@ -27,12 +29,12 @@ const StableTable = () => {
   return (
     <div className="tableFlex">
       <div className="tableBox">
-        <div className="tableTitle">Stables</div>
+        <div className="tableTitle">{t("stable:stables")}</div>
         <div className="innerBox">
           <div className="gridRow">
             <Checkbox />
             {tableHeading.map((heading) => (
-              <div key={heading}>{heading}</div>
+              <div key={heading}>{t(`stable:${heading}`)}</div>
             ))}
           </div>
 

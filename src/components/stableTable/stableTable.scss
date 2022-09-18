@@ -3,6 +3,7 @@
 
 .gridRow {
   @include gridTableRow(4);
+  text-transform: capitalize;
 }
 .gridRowWithBorder {
   @extend .gridRow;

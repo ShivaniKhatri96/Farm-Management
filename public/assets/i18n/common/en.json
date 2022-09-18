@@ -1,10 +1,16 @@
 {
     "submit": "Submit",
+    "create": "Create",
     "login": "LogIn",
     "settings": "Settings",
     "logout": "Logout",
     "overview":"Overview",
     "stableManagement": "Stable Management",
     "groupManagement": "Group Management",
-    "data": "Data"
+    "data": "Data",
+    "dataInfo": "data",
+    "stable": "stable",
+    "group": "group",
+    "clickInfo":"Click to add a",
+    "toYour": "to your"
 }

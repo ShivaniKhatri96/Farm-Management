@@ -17,14 +17,14 @@ i18n
     debug: false,
     //can have multiple namespaces, in case you want to divide a huge
     //translations into smaller pieces and load them on demand
-    ns: ["common", "welcome"],
+    ns: ["common", "welcome","stable","group","data"],
     interpolation: {
       escapeValue: false,
       formatSeparator: ",",
     },
     react: {
       wait: true,
-      
+
     },
   });
 export default i18n;

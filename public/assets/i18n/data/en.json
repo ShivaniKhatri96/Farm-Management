@@ -1,0 +1,10 @@
+{
+    "data": "Data",
+    "date": "date",
+    "feedIntake":"Feed intake(kg)",
+    "waterIntake":"Water intake(l)",
+    "temperature":"Temperature(°C)",
+    "feed": "feed(kg)", 
+    "water": "water(L)", 
+    "temp": "temp(°C)"
+}

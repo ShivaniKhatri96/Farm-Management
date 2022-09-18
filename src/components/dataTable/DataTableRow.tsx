@@ -6,7 +6,7 @@ import { dataContent } from "./DataTable";
 interface dataProps {
   id: string;
   date: string;
-  temp: number;
+  temp: string;
   feed: number;
   water: number;
   clickDataHandler: () => void;
@@ -34,7 +34,7 @@ const DataTableRow: FC<dataProps> = ({
       <div>{date}</div>
       <div>{feed}</div>
       <div>{water}</div>
-      <div>{temp}</div>
+      <div>{JSON.parse(localStorage.getItem("selectedLanguage") || "{}") === "nl" ? temp.replace(".",","): temp}</div>
     </div>
   );
 };
