@@ -22,12 +22,15 @@ const Header = () => {
   const dispatch = useAppDispatch();
   const active = useAppSelector((state) => state.header.active);
   const hamburgerOn = useAppSelector((state) => state.header.hamburgerOn);
-  const [selected, setSelected] = useState<string>("");
+  const [selected, setSelected] = useState<string>("en");
   const options = [
     { value: "en", label: "EN" },
     { value: "nl", label: "NL" },
   ];
-  const defaultOption = [{ value: "en", label: "EN" }];
+  const defaultOption = [
+    { value: "en", label: "EN" },
+    { value: "nl", label: "NL" },
+  ];
   const handleHamburger = () => {
     dispatch(toggleHamburger());
   };
@@ -55,15 +58,32 @@ const Header = () => {
     };
   }, [active]);
   //// Only re-runs the effect if active changes
+
   const handleLanguageChange = (selectedOption: any) => {
     setSelected(selectedOption.value);
+    localStorage.setItem(
+      "selectedLanguage",
+      JSON.stringify(selectedOption.value)
+    );
+    // localStorage.setItem("i18nextLng", JSON.stringify(selectedOption.value));
   };
-  useEffect(() => {
-    i18n.changeLanguage("en");
-  }, []);
   useEffect(() => {
     i18n.changeLanguage(selected);
   }, [selected]);
+
+  useEffect(() => {
+    let selectedLang = JSON.parse(
+      localStorage.getItem("selectedLanguage") || "{}"
+    );
+    // let selectedLang =
+    //   localStorage.getItem("i18nextLng") ;
+    if (selectedLang.length > 0) {
+      i18n.changeLanguage(selectedLang);
+    }
+    //  else {
+    //   i18n.changeLanguage("en");
+    // }
+  }, []);
 
   return (
     <div className="header-box">
@@ -80,13 +100,21 @@ const Header = () => {
         <Select
           options={options}
           styles={colorLangStyles}
-          defaultValue={defaultOption[0]}
+          // defaultOption[0]
+          defaultValue={
+            defaultOption.find(
+              (elem) =>
+                elem.value ===
+                JSON.parse(localStorage.getItem("selectedLanguage") || "{}")
+              // localStorage.getItem("i18nextLng")
+            ) || defaultOption[0]
+          }
           components={{ DropdownIndicator: () => null }}
           onChange={handleLanguageChange}
         />
         {!UserService.isLoggedIn() ? (
           <div className="login" onClick={() => UserService.doLogin()}>
-            <FontAwesomeIcon icon={faArrowRightToBracket} /> {t('login')}
+            <FontAwesomeIcon icon={faArrowRightToBracket} /> {t("login")}
           </div>
         ) : (
           <div>
