@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../header/headerContainer.scss";
 import {
   faCircleUser,
@@ -11,13 +11,26 @@ import { toggleActive, toggleHamburger } from "./headerSlice";
 import { useRef } from "react";
 import { headerMenu } from "../layoutPage/Layout";
 import UserService from "../../../services/UserService";
+import Select from "react-select";
+import { colorLangStyles } from "../../../reactSelectStyles/langStyles";
+import i18next, { changeLanguage } from "i18next";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { i18n, t } = useTranslation(["common"]);
   const node = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const active = useAppSelector((state) => state.header.active);
   const hamburgerOn = useAppSelector((state) => state.header.hamburgerOn);
-
+  const [selected, setSelected] = useState<string>("en");
+  const options = [
+    { value: "en", label: "EN" },
+    { value: "nl", label: "NL" },
+  ];
+  const defaultOption = [
+    { value: "en", label: "EN" },
+    { value: "nl", label: "NL" },
+  ];
   const handleHamburger = () => {
     dispatch(toggleHamburger());
   };
@@ -26,7 +39,7 @@ const Header = () => {
     dispatch(toggleActive());
   };
   const handleDropdown = (name: string) => {
-    if (name === "Logout") {
+    if (name === "logout") {
       UserService.doLogout();
     }
   };
@@ -46,6 +59,32 @@ const Header = () => {
   }, [active]);
   //// Only re-runs the effect if active changes
 
+  const handleLanguageChange = (selectedOption: any) => {
+    setSelected(selectedOption.value);
+    localStorage.setItem(
+      "selectedLanguage",
+      JSON.stringify(selectedOption.value)
+    );
+    // localStorage.setItem("i18nextLng", JSON.stringify(selectedOption.value));
+  };
+  useEffect(() => {
+    i18n.changeLanguage(selected);
+  }, [selected]);
+
+  useEffect(() => {
+    let selectedLang = JSON.parse(
+      localStorage.getItem("selectedLanguage") || "{}"
+    );
+    // let selectedLang =
+    //   localStorage.getItem("i18nextLng") ;
+    if (selectedLang.length > 0) {
+      i18n.changeLanguage(selectedLang);
+    }
+    //  else {
+    //   i18n.changeLanguage("en");
+    // }
+  }, []);
+
   return (
     <div className="header-box">
       <Link className="logo" to={"/"}>
@@ -57,47 +96,67 @@ const Header = () => {
         />
       </Link>
       {/*based on whether the user is logged in or not*/}
-      {!UserService.isLoggedIn() ? (
-        <div className="login" onClick={() => UserService.doLogin()}>
-          <FontAwesomeIcon icon={faArrowRightToBracket} /> LogIn
-        </div>
-      ) : (
-        <div>
-          {/* below large screens */}
-          <div
-            className={hamburgerOn ? "hamburgerOn" : "hamburger"}
-            onClick={handleHamburger}
-          />
-          {/* this will be shown only from large screens */}
-          <div className="client-area">
-            <div className="client-name">Shivani</div>
-            <div ref={node}>
-              <div onClick={handleClient}>
-                <FontAwesomeIcon icon={faCircleUser} className="circle" />
-              </div>
-              {/* dropdown items */}
-              {active && (
-                <div className="dropdown-client">
-                  {headerMenu.map((menu) => (
-                    <Link
-                      key={menu.name}
-                      className="dropdown-content"
-                      to={menu.route}
-                      onClick={() => {
-                        handleDropdown(menu.name);
-                        handleClient();
-                      }}
-                    >
-                      <FontAwesomeIcon icon={menu.icon} className="icon-gap" />
-                      {menu.name}
-                    </Link>
-                  ))}
+      <div className="client-grid">
+        <Select
+          options={options}
+          styles={colorLangStyles}
+          // defaultOption[0]
+          defaultValue={
+            defaultOption.find(
+              (elem) =>
+                elem.value ===
+                JSON.parse(localStorage.getItem("selectedLanguage") || "{}")
+              // localStorage.getItem("i18nextLng")
+            ) || defaultOption[0]
+          }
+          components={{ DropdownIndicator: () => null }}
+          onChange={handleLanguageChange}
+        />
+        {!UserService.isLoggedIn() ? (
+          <div className="login" onClick={() => UserService.doLogin()}>
+            <FontAwesomeIcon icon={faArrowRightToBracket} /> {t("login")}
+          </div>
+        ) : (
+          <div>
+            {/* below large screens */}
+            <div
+              className={hamburgerOn ? "hamburgerOn" : "hamburger"}
+              onClick={handleHamburger}
+            />
+            {/* this will be shown only from large screens */}
+            <div className="client-area">
+              <div className="client-name">Shivani</div>
+              <div ref={node}>
+                <div onClick={handleClient}>
+                  <FontAwesomeIcon icon={faCircleUser} className="circle" />
                 </div>
-              )}
+                {/* dropdown items */}
+                {active && (
+                  <div className="dropdown-client">
+                    {headerMenu.map((menu) => (
+                      <Link
+                        key={menu.name}
+                        className="dropdown-content"
+                        to={menu.route}
+                        onClick={() => {
+                          handleDropdown(menu.name);
+                          handleClient();
+                        }}
+                      >
+                        <FontAwesomeIcon
+                          icon={menu.icon}
+                          className="icon-gap"
+                        />
+                        {t(menu.name)}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

@@ -21,8 +21,9 @@ code {
 }
 
 //for forms
+//animations can't be added to display:none
+// this container is made invisible with opacity:0 and pointer-events:none;
 .modalContainer {
-  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -30,10 +31,21 @@ code {
   height: 100vh;
   background: rgba(0, 0, 0, 0.3);
   z-index: 2;
+  // adding animation to the modal
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform, opacity;
+  transform: scale(1.15);
+  // closes faster
+  transition: transform ease-in-out 0.1s, opacity ease-in-out 0.1s;
 }
-.modalClose {
+.modalVisible {
   @extend .modalContainer;
-  display: none;
+  pointer-events: auto;
+  opacity: 1;
+  transform: scale(1);
+  //opens slowly
+  transition: transform ease-in-out 0.2s, opacity ease-in-out 0.2s;
 }
 
 .form {
@@ -202,6 +214,9 @@ code {
   }
   @include min-sm-Landscape {
     padding: 0.6rem;
+  }
+  @include min-md {
+    padding: 1.5rem;
   }
 }
 

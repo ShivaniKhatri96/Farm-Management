@@ -1,0 +1,17 @@
+{
+    "data": "Data",
+    "date": "Date",
+    "feedIntake":"Feed intake(kg)",
+    "waterIntake":"Water intake(l)",
+    "temperature":"Temperature(°C)",
+    "feed": "feed(kg)", 
+    "water": "water(L)", 
+    "temp": "temp(°C)",
+    "createData": "Create Data",
+    "fillDataForm":"Fill this form to create a Data",
+    "selectStable": "Select stable",
+    "selectGroup": "Select group",
+    "enterFeedIntake":"Enter feed intake",
+    "enterWaterIntake":"Enter water intake",
+    "enterTemperature":"Enter temperature"
+}

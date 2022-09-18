@@ -1,0 +1,17 @@
+{
+    "data": "Gegevens",
+    "date": "Datum",
+    "feedIntake": "Voedsel inname(kg)",
+    "waterIntake": "Water inname(l)",
+    "temperature": "Temperatuur(°C)",
+    "feed": "voedsel(kg)",
+    "water": "water(L)",
+    "temp": "temp(°C)",
+    "createData": "Gegevens maken",
+    "fillDataForm": "Vul dit formulier in om een ​​gegevens aan te maken",
+    "selectStable": "Selecteer stal",
+    "selectGroup": "Selecteer groep",
+    "enterFeedIntake":"Voer voeropname in",
+    "enterWaterIntake":"Voer wateropname in",
+    "enterTemperature":"Voer temperatuur in"
+}

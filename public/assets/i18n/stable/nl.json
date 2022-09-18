@@ -1,0 +1,12 @@
+{
+    "farm": "boerderij",
+    "stable": "stal",
+    "stables": "Stallen",
+    "location": "Plaats",
+    "groups": "groepen",
+    "createStable": "Stal maken",
+    "fillStableForm": "Vul dit formulier in om een ​​stal te maken",
+    "stableName": "Stal naam",
+    "enterName": "Voer een naam in",
+    "enterLocation": "Voer een locatie in"
+}

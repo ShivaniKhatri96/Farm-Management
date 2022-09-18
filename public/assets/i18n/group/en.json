@@ -1,0 +1,18 @@
+{
+    "groups": "Groups",
+    "group": "group",
+    "totalAnimals": "Total animals",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "status": "Status",
+    "createGroup": "Create Group",
+    "fillGroupForm": "Fill this form to create a Group",
+    "selectStable": "Select stable",
+    "groupName": "Group name",
+    "enterGroupName": "Enter a group name",
+    "noOfAnimals": "No. of animals",
+    "enterTotalAnimals": "Enter total animals",
+    "enterEndDate": "Enter an end date",
+    "active": "Active",
+    "inactive": "Inactive"
+}

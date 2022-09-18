@@ -3,11 +3,11 @@ import Header from "../header/Header";
 import Sidebar from "../sidebar/Sidebar";
 import "../layoutPage/layoutPage.scss";
 import { faGear, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-
+import { useTranslation } from "react-i18next";
 //array of objects for header menu
 export const headerMenu = [
-  { name: "Settings", route: "/settings", icon: faGear },
-  { name: "Logout", route: "/", icon: faRightFromBracket },
+  { name: "settings", route: "/settings", icon: faGear },
+  { name: "logout", route: "/", icon: faRightFromBracket },
 ];
 
 type Props = {
@@ -15,6 +15,7 @@ type Props = {
 };
 
 const Layout: FC<Props> = ({ children }) => {
+  const { i18n, t } = useTranslation(["common"]);
   return (
     <div>
       <Header />

@@ -9,7 +9,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./groupForm.scss";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { toggleGroupActive } from "../../pages/groups/groupSlice";
+import { useTranslation } from "react-i18next";
+
 const GroupForm = () => {
+  const { t } = useTranslation(["common", "group"]);
   const dispatch = useAppDispatch();
   const groupFormActive = useAppSelector(
     (state) => state.group.groupFormActive
@@ -31,41 +34,42 @@ const GroupForm = () => {
   const [endDate, setEndDate] = useState<Date | null>(null);
 
   return (
-    <div className={groupFormActive ? "modalContainer" : "modalClose"}>
+    <div className={groupFormActive ? "modalVisible" : "modalContainer"}>
       <div className="form">
         <div className="closeButton">
           <FontAwesomeIcon icon={faWindowClose} onClick={handleGroupClose} />
         </div>
         <div className="formBody">
           <div>
-            <div className="formTitle">Create Group</div>
-            <div className="formTitleSecond">
-              Fill this form to create a Group
-            </div>
+            <div className="formTitle">{t("group:createGroup")}</div>
+            <div className="formTitleSecond">{t("group:fillGroupForm")}</div>
           </div>
           <div className="formInputs">
             <div>
-              <label className="formLabel">Select stable</label>
+              <label className="formLabel">{t("group:selectStable")}</label>
               <Select options={options} styles={colorStyles} />
             </div>
             <div className="gridForm">
               <div>
-                <label className="formLabel">Group name</label>
-                <input className="formInput" placeholder="Enter a group name" />
+                <label className="formLabel">{t("group:groupName")}</label>
+                <input
+                  className="formInput"
+                  placeholder={t("group:enterGroupName")}
+                />
               </div>
               <div>
-                <label className="formLabel">No. of animals</label>
+                <label className="formLabel">{t("group:noOfAnimals")}</label>
                 <input
                   className="formInput"
                   type="number"
-                  placeholder="Enter total animals"
+                  placeholder={t("group:enterTotalAnimals")}
                 />
               </div>
             </div>
 
             <div className="gridForm">
               <div>
-                <label className="formLabel">Start date</label>
+                <label className="formLabel">{t("group:startDate")}</label>
                 <ReactDatePicker
                   selected={startDate}
                   onChange={(date: Date) => setStartDate(date)}
@@ -75,26 +79,26 @@ const GroupForm = () => {
                 />
               </div>
               <div>
-                <label className="formLabel">End date</label>
+                <label className="formLabel">{t("group:endDate")}</label>
                 <ReactDatePicker
                   selected={endDate}
                   onChange={(date: Date) => setEndDate(date)}
                   dateFormat="MMMM d, yyyy"
                   className="formInput"
-                  placeholderText="Enter an end date"
+                  placeholderText={t("group:enterEndDate")}
                   minDate={startDate}
                 />
               </div>
             </div>
             <div>
-              <label className="formLabel">Status</label>
+              <label className="formLabel">{t("group:status")}</label>
               <div className="gridStatus">
-                <div className="toggleActiveBtn">Active</div>
-                <div className="inactiveBtn">Inactive</div>
+                <div className="toggleActiveBtn">{t("group:active")}</div>
+                <div className="inactiveBtn">{t("group:inactive")}</div>
               </div>
             </div>
           </div>
-          <input type="submit" className="formSubmit" />
+          <input type="submit" className="formSubmit" value={t("common:submit")} />
         </div>
       </div>
     </div>

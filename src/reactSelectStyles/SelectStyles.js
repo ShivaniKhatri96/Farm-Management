@@ -4,7 +4,7 @@ export const colorStyles = {
     border: "solid #cdd0cb 1px",
     boxShadow: "none",
     fontSize: "0.84rem",
-    "&:hover": { border: "solid #cdd0cb 1px" },
+    "&:hover": { border: "solid #cdd0cb 1px", cursor: "pointer" },
   }),
   option: (styles, { isSelected }) => {
     return {

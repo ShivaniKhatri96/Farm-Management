@@ -6,17 +6,19 @@ import { Link, useLocation } from "react-router-dom";
 import { useAppSelector } from "../../../app/hooks";
 import { headerMenu } from "../layoutPage/Layout";
 import UserService from "../../../services/UserService";
+import { useTranslation } from "react-i18next";
 const navMenu = [
-  { name: "Overview", route: "/" },
-  { name: "Stable Management", route: "/stables" },
-  { name: "Group Management", route: "/groups" },
-  { name: "Data", route: "/data" },
+  { name: "overview", route: "/" },
+  { name: "stableManagement", route: "/stables" },
+  { name: "groupManagement", route: "/groups" },
+  { name: "data", route: "/data" },
 ];
 const Sidebar = () => {
+  const { t } = useTranslation(["common"]);
   const location = useLocation();
   const hamburgerOn = useAppSelector((state) => state.header.hamburgerOn);
   const handleDropdown = (name: string) => {
-    if (name === "Logout") {
+    if (name === "logout") {
       UserService.doLogout();
     }
   };
@@ -39,7 +41,7 @@ const Sidebar = () => {
               <div
                 className={menu.name === "Data" ? "menu-data" : "single-menu"}
               >
-                {menu.name}
+                {t(menu.name)}
               </div>
             </Link>
 
@@ -59,7 +61,7 @@ const Sidebar = () => {
                 handleDropdown(menu.name);
               }}
             >
-              <div className="menu-data-mobile">{menu.name}</div>
+              <div className="menu-data-mobile">{t(menu.name)}</div>
             </Link>
           ))}
         </div>

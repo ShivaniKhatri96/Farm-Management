@@ -1,0 +1,18 @@
+{
+    "groups": "Groepen",
+    "group": "groep",
+    "totalAnimals": "Totaal dieren",
+    "startDate": "Startdatum",
+    "endDate": "Einddatum",
+    "status": "Toestand",
+    "createGroup": "Groep Maken",
+    "fillGroupForm": "Vul dit formulier in om een ​​groep aan te maken",
+    "selectStable": "Selecteer stal",
+    "groupName": "Groep naam",
+    "enterGroupName": "Voer een groepsnaam in",
+    "noOfAnimals": "Aantal dieren",
+    "enterTotalAnimals": "Voer totaal aantal dieren in",
+    "enterEndDate": "Voer een einddatum in",
+    "active": "Actief",
+    "inactive": "Inactief"
+}

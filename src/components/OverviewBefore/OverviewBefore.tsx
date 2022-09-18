@@ -1,6 +1,10 @@
 import React from "react";
 import "./OverviewBefore.scss";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
+
 const OverviewBefore = () => {
+  const {i18n, t} = useTranslation(["welcome"]);
   return (
     <div className="gridOverview">
       <div className="grid-1">
@@ -14,13 +18,13 @@ const OverviewBefore = () => {
           alt="chickens in the field"
           className="chickenImg"
         />
-        <div className="welcome">Welcome to the farm world</div>
+        <div className="welcome">{t("welcome")}</div>
       </div>
       <div className="grid-2">
         <ul>
-          <li>Create stable from Stable Management </li>
-          <li>Add groups to your stable from Group Management </li>
-          <li>Add data to your group from Data </li>
+          <li>{t("createStable")} </li>
+          <li>{t("addGroups")} </li>
+          <li>{t("addData")}</li>
         </ul>
       </div>
       <div className="grid-3">

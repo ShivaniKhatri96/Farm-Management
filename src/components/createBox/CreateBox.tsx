@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import "./createBox.scss";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 interface CreateProps {
   page: string;
@@ -13,16 +15,17 @@ const CreateBox: FC<CreateProps> = ({
   to,
   handleClick,
 }): JSX.Element => {
+  const { i18n, t } = useTranslation(["common"]);
   return (
     <div className="grid-box">
       <div className="create-box">
         <div className="name">{page}</div>
         <div className="body-box">
           <div className="form-button" onClick={handleClick}>
-            Create
+            {t("create")}
           </div>
           <div className="text">
-            Click to add a {add} to your {to}
+          {t("clickInfo")} {add} {t("toYour")} {to}
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { addGroupId, removeGroupId } from "../../pages/groups/groupSlice";
 import Checkbox from "../miniComponents/Checkbox";
 import "./groupTable.scss";
 import GroupTableRow from "./GroupTableRow";
+import { useTranslation } from "react-i18next";
 //temp data
 //date format will be different with real data
 export const groupTableContent = [
@@ -49,13 +50,13 @@ export const groupTableContent = [
 ];
 const GroupTable = () => {
   const groupHeading = [
-    "Group",
-    "Total animals",
-    "Start date",
-    "End date",
-    "Status",
+    "group",
+    "totalAnimals",
+    "startDate",
+    "endDate",
+    "status",
   ];
-  const mobileGroupHeading = ["Group", "Total animals", "Status"];
+  const mobileGroupHeading = ["group", "totalAnimals", "status"];
   const dispatch = useAppDispatch();
   const selectedGroupIds = useAppSelector((state) => state.group.selectedIds);
   const clickGroupHandler = (id: string) => {
@@ -65,17 +66,18 @@ const GroupTable = () => {
       dispatch(addGroupId(id));
     }
   };
+  const { t } = useTranslation(["group"]);
   // console.log(selectedGroupIds);
   return (
     <div className="tableFlex">
       <div className="tableBox">
-        <div className="tableTitle">Groups</div>
+        <div className="tableTitle">{t("groups")}</div>
         <div className="innerBox">
           <div className="hideMobile">
             <div className="gridGroupRow">
               <Checkbox />
               {groupHeading.map((heading) => (
-                <div key={heading}>{heading}</div>
+                <div key={heading}>{t(heading)}</div>
               ))}
             </div>
           </div>
@@ -83,7 +85,7 @@ const GroupTable = () => {
             <div className="gridGroupRow">
               <Checkbox />
               {mobileGroupHeading.map((heading) => (
-                <div key={heading}>{heading}</div>
+                <div key={heading}>{t(heading)}</div>
               ))}
             </div>
           </div>

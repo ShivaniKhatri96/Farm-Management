@@ -3,6 +3,7 @@
 
 .gridGroupRow {
   @include gridTableRow(3);
+  text-transform: capitalize;
   @include min-sm {
     @include gridTableRow(5);
   }
