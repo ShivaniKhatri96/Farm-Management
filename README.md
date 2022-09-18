@@ -43,6 +43,7 @@
 - Login page (via Keycloak.js)
 - Forms layout for Stable, Group and Data pages created
 - Table layout for stable, group and data pages
+- internationalization with react-i18next added for current components
 
 # Responsive layout
 
@@ -56,11 +57,11 @@
 
 ## Currently working on
 
-- internationalization with react-i18next
+- Adding functionalities to forms including validations, connecting to backend and testing
 
 ## Next
 
-- Adding functionalities to forms including validations, connecting to backend and testing
+- getting data to tables from backend
 
 ## Links
 
@@ -70,6 +71,9 @@
 - learned to add `animation to modals` from [animating modal views](https://web.dev/animating-modal-views/)
 - `internationalization` added to the project by using tutorial from [go international with your next app](https://www.youtube.com/watch?v=baLjPx_wFi4&list=LL&index=2&t=1265s&ab_channel=YouSuckAtCoding)
 
+## Notes
+- The point of adding i18n was to learn internationalization (i18n). Language translations was done manually and google translate was used to save time. So, the translations might not be 100% accurate. 
+ 
 ## More About this Project
 
 This project has both frontend and backend. However, my main focus is frontend. This is the reason why backend code won't be added in the github. All the frontend code you will see in the github will be written by me. I will add the link to the website once the project is deployed.
