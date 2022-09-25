@@ -24,13 +24,14 @@
 - `react-select` for selection
 - `react-datepicker` for selecting a date
 - `react-i18next` for internationalization
+-`React Hook Form` for react form validations
 
 ### will be later included
 
 - `Chart.js` for graphs
 - `React Testing Library` for testing with Jest
 - `Cypress` for End to End testing
-- `React Hook Form` will be later used for react form validations
+- 
 
 ## Completed
 

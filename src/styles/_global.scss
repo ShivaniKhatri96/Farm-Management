@@ -128,6 +128,10 @@ code {
   font-size: 0.8rem;
   color: $client-grey;
 }
+.formError {
+  font-size: 0.8rem;
+  color: $dark-red;
+ }
 .formInputs {
   display: flex;
   flex-direction: column;
@@ -164,6 +168,7 @@ code {
     background-color: $button-hover;
   }
 }
+
 .gridForm {
   display: grid;
   grid-template-columns: 1fr;
