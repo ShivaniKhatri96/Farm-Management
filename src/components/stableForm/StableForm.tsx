@@ -21,23 +21,32 @@ const StableForm = () => {
   const handleClose = () => {
     if (formActive === true) {
       dispatch(toggleStableActive());
+      reset({ stableName: "", stableLocation: ""});
     }
   };
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<Inputs>();
+  
+// It's recommended to reset inside useEffect after submission.
+// useEffect(() => {
+//   reset({
+//     data: 'test'
+//   })
+// }, [isSubmitSuccessful])
 
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
     <div className={formActive ? "modalVisible" : "modalContainer"}>
-      <div className="form">
+      <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <div className="closeButton">
           <FontAwesomeIcon icon={faWindowClose} onClick={handleClose} />
         </div>
-        <form className="formBody" onSubmit={handleSubmit(onSubmit)}>
+        <div className="formBody">
           <div>
             <div className="formTitle">{t("stable:createStable")}</div>
             <div className="formTitleSecond">{t("stable:fillStableForm")}</div>
@@ -74,8 +83,8 @@ const StableForm = () => {
             className="formSubmit"
             value={t("common:submit")}
           />
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   );
 };
