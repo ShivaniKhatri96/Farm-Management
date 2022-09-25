@@ -21,7 +21,7 @@ const StableForm = () => {
   const handleClose = () => {
     if (formActive === true) {
       dispatch(toggleStableActive());
-      reset({ stableName: "", stableLocation: ""});
+      reset({ stableName: "", stableLocation: "" });
     }
   };
   const {
@@ -30,13 +30,13 @@ const StableForm = () => {
     reset,
     formState: { errors },
   } = useForm<Inputs>();
-  
-// It's recommended to reset inside useEffect after submission.
-// useEffect(() => {
-//   reset({
-//     data: 'test'
-//   })
-// }, [isSubmitSuccessful])
+
+  // It's recommended to reset inside useEffect after submission.
+  // useEffect(() => {
+  //   reset({
+  //     data: ''
+  //   })
+  // }, [isSubmitSuccessful])
 
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
